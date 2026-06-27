@@ -1,0 +1,43 @@
+- main "Cesar portfolio home" [ref=e3]:
+  - navigation "Navegacion principal" [ref=e4]:
+    - link "Cesar portfolio" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - text: César
+    - generic [ref=e6]:
+      - link "LinkedIn" [ref=e7] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e8]
+      - link "Instagram" [ref=e10] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e11]
+      - link "TikTok" [ref=e13] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e14]
+  - generic [ref=e16]:
+    - generic "Vista previa del portfolio" [ref=e19]:
+      - generic "Animacion de muestra" [ref=e21]
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: Cesar portfolio 2026
+      - button "Deslizar" [ref=e24] [cursor=pointer]:
+        - generic [ref=e25]: Deslizar
+  - region "Frase principal" [ref=e26]:
+    - paragraph [ref=e28]:
+      - generic [ref=e29]: En
+      - generic [ref=e30]: un
+      - generic [ref=e31]: mundo
+      - generic [ref=e32]: de
+      - generic [ref=e33]: ruido,
+      - generic [ref=e34]: las
+      - generic [ref=e35]: ideas
+      - generic [ref=e36]: son
+      - generic [ref=e37]: lo
+      - generic [ref=e38]: más
+      - generic [ref=e39]: valioso
+  - generic "Opciones de tarjetas para diseno grafico" [ref=e41]:
+    - button "Abrir Direccion grafica" [ref=e42] [cursor=pointer]:
+      - generic [ref=e44]: "01"
+      - generic [ref=e45]:
+        - generic [ref=e46]: Portfolio creativo
+        - strong [ref=e47]: Direccion grafica
+        - generic [ref=e48]: Arte final, carteleria y contenido visual con una linea mas editorial.
+        - generic [ref=e49]: Poster / Layout / Motion

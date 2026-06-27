@@ -1,0 +1,27 @@
+- main "Cesar portfolio home" [ref=e3]:
+  - navigation "Navegacion principal" [ref=e4]:
+    - link "Cesar portfolio" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - text: César
+    - generic [ref=e6]:
+      - link "LinkedIn" [ref=e7] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e8]
+      - link "Instagram" [ref=e10] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e11]
+      - link "TikTok" [ref=e13] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e14]
+  - generic [ref=e16]:
+    - generic "Vista previa del portfolio" [ref=e19]:
+      - generic "Animacion de muestra" [ref=e21]
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: Cesar portfolio 2026
+      - button "Deslizar" [ref=e24] [cursor=pointer]:
+        - generic [ref=e25]: Deslizar
+  - button "Abrir pieza destacada de marketing" [ref=e27] [cursor=pointer]:
+    - generic [ref=e29]:
+      - strong [ref=e30]: Titulo
+      - generic [ref=e31]: Un poco de informacion
+      - generic [ref=e32]: "Amarillo principal #ffed00"

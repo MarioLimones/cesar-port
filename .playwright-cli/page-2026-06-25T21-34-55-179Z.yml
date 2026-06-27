@@ -1,0 +1,32 @@
+- main "Cesar portfolio home" [ref=e3]:
+  - navigation "Navegacion principal" [ref=e4]:
+    - link "Cesar portfolio" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - text: César
+    - generic [ref=e6]:
+      - link "LinkedIn" [ref=e7] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e8]
+      - link "Instagram" [ref=e10] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e11]
+      - link "TikTok" [ref=e13] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e14]
+  - generic [ref=e16]:
+    - generic "Vista previa del portfolio" [ref=e19]:
+      - img "Animacion de muestra" [ref=e20]
+    - generic [ref=e21]:
+      - paragraph [ref=e22]: Cesar portfolio 2026
+      - button "Deslizar" [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]: Deslizar
+  - link "Abrir pieza destacada de marketing" [ref=e26] [cursor=pointer]:
+    - /url: "#marketing"
+    - strong [ref=e31]: CK
+    - generic [ref=e34]:
+      - generic [ref=e35]: Marketing
+      - strong [ref=e36]: Proyecto destacado
+      - generic [ref=e37]: Un espacio para campanas, piezas y trabajos clave del equipo.
+      - generic [ref=e38]:
+        - text: Mas informacion
+        - generic [ref=e39]: "->"

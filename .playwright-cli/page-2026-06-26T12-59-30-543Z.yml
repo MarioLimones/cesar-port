@@ -1,0 +1,56 @@
+- main "Cesar portfolio home" [ref=e3]:
+  - navigation "Navegacion principal" [ref=e4]:
+    - link "Cesar portfolio" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - text: César
+    - generic [ref=e6]:
+      - link "LinkedIn" [ref=e7] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e8]
+      - link "Instagram" [ref=e10] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e11]
+      - link "TikTok" [ref=e13] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e14]
+  - generic [ref=e16]:
+    - generic "Vista previa del portfolio" [ref=e19]:
+      - generic "Animacion de muestra" [ref=e21]
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: Cesar portfolio 2026
+      - button "Deslizar" [ref=e24] [cursor=pointer]:
+        - generic [ref=e25]: Deslizar
+  - button "Abrir pieza destacada de marketing" [active] [ref=e27] [cursor=pointer]:
+    - generic [ref=e29]:
+      - strong [ref=e30]: Titulo
+      - generic [ref=e31]: Un poco de informacion
+      - generic [ref=e32]: "Amarillo principal #ffed00"
+  - dialog "Galeria del proyecto" [ref=e33]:
+    - button "Atras" [ref=e34] [cursor=pointer]
+    - link "Ver proyecto" [ref=e35] [cursor=pointer]:
+      - /url: "#marketing"
+    - generic [ref=e36]:
+      - article [ref=e37]:
+        - img "Estudio moderno con mesas de trabajo y luz natural" [ref=e39]
+        - generic [ref=e40]:
+          - text: Proyecto destacado
+          - heading "Galeria visual" [level=2] [ref=e41]
+          - paragraph [ref=e42]: Un recorrido horizontal para presentar imagenes, piezas y decisiones clave del proyecto sin salir de la pagina.
+      - article [ref=e43]:
+        - img "Detalle de una fachada geometrica con colores intensos" [ref=e45]
+        - generic [ref=e46]:
+          - text: Direccion
+          - heading "Identidad con impacto" [level=2] [ref=e47]
+          - paragraph [ref=e48]: Bloques grandes, amarillo principal y fondos oscuros para mantener el caracter de la web mientras el contenido respira.
+      - article [ref=e49]:
+        - img "Equipo revisando material creativo en una mesa" [ref=e51]
+        - generic [ref=e52]:
+          - text: Contenido
+          - heading "Imagenes y texto" [level=2] [ref=e53]
+          - paragraph [ref=e54]: Cada panel acepta una imagen, una etiqueta, un titulo y una descripcion. Anadir nuevas secciones es solo sumar objetos al array.
+      - article [ref=e55]:
+        - img "Persona trabajando frente a pantallas con interfaz digital" [ref=e57]
+        - generic [ref=e58]:
+          - text: Cierre
+          - heading "Portfolio vivo" [level=2] [ref=e59]
+          - paragraph [ref=e60]: La tarjeta inicial se abre como experiencia inmersiva y vuelve atras con la misma transicion, manteniendo la navegacion en la misma pagina.

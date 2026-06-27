@@ -1,0 +1,7 @@
+- main "Cesar portfolio home" [ref=e3]:
+  - generic [ref=e4]:
+    - generic "Vista previa del portfolio" [ref=e7]:
+      - img "Animacion de muestra" [ref=e8]
+    - button "Deslizar" [ref=e9] [cursor=pointer]:
+      - generic [ref=e10]: Deslizar
+    - paragraph [ref=e12]: Cesar portfolio 2026
