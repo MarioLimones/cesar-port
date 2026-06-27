@@ -7,7 +7,7 @@ const previewAnimation =
 const workProjects = [
   {
     number: '01',
-    word: 'Mundo',
+    href: '/marketing',
     eyebrow: 'Estrategia digital',
     title: ['Marketing'],
     subtitle: 'Campanas, contenido y acciones pensadas para que una marca entre en conversacion.',
@@ -33,7 +33,7 @@ const workProjects = [
   },
   {
     number: '02',
-    word: 'de',
+    href: '/diseno-grafico',
     eyebrow: 'Identidad visual',
     title: ['Diseno', 'grafico'],
     subtitle: 'Piezas visuales, composicion y sistemas graficos con una mirada mas editorial.',
@@ -59,7 +59,7 @@ const workProjects = [
   },
   {
     number: '03',
-    word: 'Ideas',
+    href: '/edicion-video',
     eyebrow: 'Audiovisual',
     title: ['Edicion', 'de video'],
     subtitle: 'Ritmo, montaje y narrativa para piezas que se sienten fluidas desde el primer segundo.',
@@ -85,7 +85,7 @@ const workProjects = [
   },
   {
     number: '04',
-    word: 'valiosas',
+    href: '/proyecto-personal',
     eyebrow: 'Exploracion propia',
     title: ['Proyecto', 'personal'],
     subtitle: 'Conceptos, pruebas y direccion propia para convertir una intuicion en algo visible.',
@@ -129,9 +129,99 @@ const socialLinks = [
   },
 ]
 
+const ideaText = 'En un mundo de ruido, las ideas son Lo más valioso'
+const ideaWords = ideaText.split(' ')
+
+function IdeaReveal() {
+  const [ideaProgress, setIdeaProgress] = useState(0)
+  const sectionRef = useRef(null)
+  const frameRef = useRef(null)
+  const lastYRef = useRef(0)
+  const progressRef = useRef(0)
+  const jumpRef = useRef(false)
+
+  useEffect(() => {
+    const updateIdeaProgress = () => {
+      const section = sectionRef.current
+      if (!section) return
+
+      const scrollSpace = section.offsetHeight - window.innerHeight
+      const nextProgress = scrollSpace > 0 ? -section.getBoundingClientRect().top / scrollSpace : 0
+      const progress = Math.max(0, Math.min(1, nextProgress))
+      const previousProgress = progressRef.current
+      const scrollingDown = window.scrollY > lastYRef.current
+      lastYRef.current = window.scrollY
+      progressRef.current = progress
+
+      setIdeaProgress(progress)
+
+      if (progress < 0.98) jumpRef.current = false
+      if (previousProgress < 0.98 && progress >= 0.98 && scrollingDown && !jumpRef.current) {
+        jumpRef.current = true
+        window.scrollTo({
+          top: section.nextElementSibling?.offsetTop ?? section.offsetTop + section.offsetHeight,
+          behavior: 'smooth',
+        })
+      }
+    }
+
+    const onScroll = () => {
+      if (frameRef.current) return
+
+      frameRef.current = requestAnimationFrame(() => {
+        frameRef.current = null
+        updateIdeaProgress()
+      })
+    }
+
+    updateIdeaProgress()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+
+    return () => {
+      cancelAnimationFrame(frameRef.current)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [])
+
+  return (
+    <section className="idea-reveal" ref={sectionRef} aria-label="Frase principal">
+      <div className="idea-sticky">
+        <p className="idea-line" aria-label={ideaText}>
+          {ideaWords.map((word, index) => {
+            const revealCursor = ideaProgress * (ideaWords.length + 1)
+            const wordProgress = Math.max(0, Math.min(1, revealCursor - index))
+            const previewProgress = Math.max(0, Math.min(1, 1 - (index - revealCursor) / 3))
+            const wordOpacity = wordProgress > 0 ? wordProgress : previewProgress * 0.08
+
+            return (
+              <span
+                className="idea-word"
+                aria-hidden="true"
+                style={{
+                  opacity: wordOpacity,
+                  transform: `translateY(${(1 - Math.max(wordProgress, previewProgress)) * 0.38}em)`,
+                }}
+                key={`${word}-${index}`}
+              >
+                {word}
+                {index < ideaWords.length - 1 ? ' ' : ''}
+              </span>
+            )
+          })}
+        </p>
+      </div>
+    </section>
+  )
+}
+
 function WorkStory() {
   const [activeIndex, setActiveIndex] = useState(0)
   const sectionRef = useRef(null)
+  const activeIndexRef = useRef(0)
+  const lockRef = useRef(false)
+  const touchStartRef = useRef(0)
 
   useEffect(() => {
     const markers = sectionRef.current?.querySelectorAll('[data-work-marker]')
@@ -141,7 +231,10 @@ function WorkStory() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveIndex(Number(entry.target.dataset.workMarker))
+            const index = Number(entry.target.dataset.workMarker)
+            if (Number.isInteger(index)) {
+              setActiveIndex(Math.max(0, Math.min(workProjects.length - 1, index)))
+            }
           }
         })
       },
@@ -152,7 +245,84 @@ function WorkStory() {
     return () => observer.disconnect()
   }, [])
 
-  const activeProject = workProjects[activeIndex]
+  useEffect(() => {
+    activeIndexRef.current = activeIndex
+  }, [activeIndex])
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return undefined
+
+    const isInsideWork = () => {
+      const rect = section.getBoundingClientRect()
+      return rect.top <= 8 && rect.bottom >= window.innerHeight - 8
+    }
+
+    const goToProject = (nextIndex) => {
+      const index = Math.max(0, Math.min(workProjects.length - 1, nextIndex))
+      if (index === activeIndexRef.current || lockRef.current) return false
+
+      lockRef.current = true
+      activeIndexRef.current = index
+      setActiveIndex(index)
+      window.scrollTo({
+        top: section.offsetTop + index * window.innerHeight,
+        behavior: 'smooth',
+      })
+      window.setTimeout(() => {
+        lockRef.current = false
+      }, 850)
+
+      return true
+    }
+
+    const step = (direction) => goToProject(activeIndexRef.current + direction)
+
+    const onWheel = (event) => {
+      if (!isInsideWork() || Math.abs(event.deltaY) < 1) return
+      if (step(event.deltaY > 0 ? 1 : -1)) event.preventDefault()
+    }
+
+    const onTouchStart = (event) => {
+      touchStartRef.current = event.touches[0]?.clientY ?? 0
+    }
+
+    const onTouchMove = (event) => {
+      if (!isInsideWork()) return
+
+      const delta = touchStartRef.current - (event.touches[0]?.clientY ?? touchStartRef.current)
+      if (Math.abs(delta) < 8) return
+      if (step(delta > 0 ? 1 : -1)) event.preventDefault()
+    }
+
+    const onKeyDown = (event) => {
+      if (!isInsideWork()) return
+
+      const direction =
+        event.key === 'ArrowDown' || event.key === 'PageDown' || event.key === ' '
+          ? 1
+          : event.key === 'ArrowUp' || event.key === 'PageUp'
+            ? -1
+            : 0
+
+      if (direction && step(direction)) event.preventDefault()
+    }
+
+    window.addEventListener('wheel', onWheel, { passive: false })
+    window.addEventListener('touchstart', onTouchStart, { passive: true })
+    window.addEventListener('touchmove', onTouchMove, { passive: false })
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      window.removeEventListener('wheel', onWheel)
+      window.removeEventListener('touchstart', onTouchStart)
+      window.removeEventListener('touchmove', onTouchMove)
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [])
+
+  const activeProject = workProjects[activeIndex] ?? workProjects[0]
+  const activeWord = activeProject?.word ?? ''
 
   return (
     <section
@@ -169,13 +339,6 @@ function WorkStory() {
           '--work-glow': activeProject.glow,
         }}
       >
-        <p className="work-word" aria-label={activeProject.word} key={activeProject.word}>
-          {activeProject.word.toUpperCase().split('').map((letter, index) => (
-            <span className="work-letter" aria-hidden="true" key={`${letter}-${index}`}>
-              {letter}
-            </span>
-          ))}
-        </p>
         <div className="work-counter" aria-hidden="true">
           <span>{activeProject.number}</span>
           <span>/{String(workProjects.length).padStart(2, '0')}</span>
@@ -201,14 +364,28 @@ function WorkStory() {
               <div className="work-copy">
                 <span className="work-eyebrow">{project.eyebrow}</span>
                 <h2>
-                  {project.title.map((line) => (
-                    <span key={line}>{line}</span>
-                  ))}
+                  <a className="work-title-link" href={project.href}>
+                    {project.title.map((line) => (
+                      <span key={line}>{line}</span>
+                    ))}
+                  </a>
                 </h2>
                 <p>{project.subtitle}</p>
               </div>
             </article>
           ))}
+          <p
+            className="work-word"
+            data-word={activeWord.toLowerCase()}
+            aria-label={activeWord}
+            key={activeWord}
+          >
+            {activeWord.toUpperCase().split('').map((letter, index) => (
+              <span className="work-letter" aria-hidden="true" key={`${letter}-${index}`}>
+                {letter}
+              </span>
+            ))}
+          </p>
         </div>
       </div>
 
@@ -289,6 +466,7 @@ export default function App() {
         </span>
       </section>
 
+      <IdeaReveal />
       <WorkStory />
     </main>
   )

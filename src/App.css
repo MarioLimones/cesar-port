@@ -238,6 +238,59 @@ a {
   animation: arrow-bounce 1.15s ease-in-out infinite;
 }
 
+.idea-reveal {
+  width: 100%;
+  height: 150svh;
+  background: var(--ink);
+}
+
+.idea-sticky {
+  position: sticky;
+  top: 0;
+  min-height: 88svh;
+  display: grid;
+  place-items: center;
+  padding: 116px clamp(18px, 7vw, 120px) 28px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 237, 0, 0.08), transparent 34%),
+    var(--ink);
+}
+
+.idea-line {
+  width: min(1180px, 100%);
+  margin: 0;
+  color: var(--paper);
+  font-size: clamp(40px, 7.2vw, 108px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.idea-word {
+  display: inline-block;
+  margin: 0 0.055em;
+  will-change: opacity, transform;
+}
+
+.idea-word:nth-child(9),
+.idea-word:nth-child(10),
+.idea-word:nth-child(11) {
+  color: var(--yellow);
+  font-family:
+    "Times New Roman Condensed Bold",
+    "Times New Roman Condensed",
+    "Times New Roman",
+    Times,
+    serif;
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: condensed;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 .work-story {
   width: 100vw;
   height: calc(var(--work-count) * 100svh);
@@ -268,71 +321,6 @@ a {
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.34), transparent 32%, transparent 68%, rgba(0, 0, 0, 0.34)),
     linear-gradient(180deg, rgba(0, 0, 0, 0.32), transparent 25%, transparent 76%, rgba(0, 0, 0, 0.36));
-}
-
-.work-word {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  margin: 0;
-  pointer-events: none;
-}
-
-.work-letter {
-  position: absolute;
-  color: rgba(255, 255, 255, 0.16);
-  font-size: clamp(92px, 12vw, 220px);
-  line-height: 0.78;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: letter-enter 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.work-letter:nth-child(1) {
-  left: 15vw;
-  top: 12vh;
-}
-
-.work-letter:nth-child(2) {
-  left: 72vw;
-  top: 62vh;
-  animation-delay: 0.04s;
-}
-
-.work-letter:nth-child(3) {
-  left: 53vw;
-  top: 18vh;
-  animation-delay: 0.08s;
-}
-
-.work-letter:nth-child(4) {
-  left: 31vw;
-  top: 72vh;
-  animation-delay: 0.12s;
-}
-
-.work-letter:nth-child(5) {
-  left: 8vw;
-  top: 74vh;
-  animation-delay: 0.16s;
-}
-
-.work-letter:nth-child(6) {
-  left: 82vw;
-  top: 18vh;
-  animation-delay: 0.2s;
-}
-
-.work-letter:nth-child(7) {
-  left: 47vw;
-  top: 81vh;
-  animation-delay: 0.24s;
-}
-
-.work-letter:nth-child(8) {
-  left: 23vw;
-  top: 29vh;
-  animation-delay: 0.28s;
 }
 
 .work-counter {
@@ -507,6 +495,25 @@ a {
   text-shadow: 0 16px 46px rgba(0, 0, 0, 0.34);
 }
 
+.work-title-link {
+  display: inline-block;
+  color: inherit;
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.work-title-link:hover,
+.work-title-link:focus-visible {
+  color: var(--yellow);
+  transform: translateY(-8px);
+}
+
+.work-title-link:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 8px;
+}
+
 .work-copy h2 span {
   display: block;
 }
@@ -532,11 +539,13 @@ a {
   position: relative;
   z-index: 0;
   margin-top: -100svh;
+  pointer-events: none;
 }
 
 .work-marker {
   height: 100svh;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 @keyframes letter-enter {
@@ -652,52 +661,18 @@ a {
     border-width: 4px;
   }
 
-  .work-letter {
-    font-size: clamp(82px, 28vw, 144px);
-    color: rgba(255, 255, 255, 0.14);
+  .idea-reveal {
+    height: 150svh;
   }
 
-  .work-letter:nth-child(1) {
-    left: 5vw;
-    top: 10vh;
+  .idea-sticky {
+    min-height: 86svh;
+    padding: 96px 18px 28px;
   }
 
-  .work-letter:nth-child(2) {
-    left: 58vw;
-    top: 20vh;
-  }
-
-  .work-letter:nth-child(3) {
-    left: 18vw;
-    top: 72vh;
-  }
-
-  .work-letter:nth-child(4) {
-    left: 65vw;
-    top: 68vh;
-  }
-
-  .work-letter:nth-child(5),
-  .work-letter:nth-child(6),
-  .work-letter:nth-child(7),
-  .work-letter:nth-child(8) {
-    top: 44vh;
-  }
-
-  .work-letter:nth-child(5) {
-    left: 2vw;
-  }
-
-  .work-letter:nth-child(6) {
-    left: 48vw;
-  }
-
-  .work-letter:nth-child(7) {
-    left: 75vw;
-  }
-
-  .work-letter:nth-child(8) {
-    left: 27vw;
+  .idea-line {
+    font-size: clamp(42px, 14vw, 68px);
+    line-height: 1.02;
   }
 
   .work-counter {
