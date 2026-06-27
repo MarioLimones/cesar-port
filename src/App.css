@@ -323,6 +323,77 @@ a {
     linear-gradient(180deg, rgba(0, 0, 0, 0.32), transparent 25%, transparent 76%, rgba(0, 0, 0, 0.36));
 }
 
+.work-word {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  margin: 0;
+  pointer-events: none;
+}
+
+.work-letter {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.38);
+  font-size: clamp(42px, 5.2vw, 94px);
+  line-height: 0.78;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: letter-enter 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.work-letter:nth-child(1) {
+  left: 12vw;
+  top: 10vh;
+}
+
+.work-letter:nth-child(2) {
+  left: 28vw;
+  top: 76vh;
+  animation-delay: 0.04s;
+}
+
+.work-letter:nth-child(3) {
+  left: 34vw;
+  top: 13vh;
+  animation-delay: 0.08s;
+}
+
+.work-letter:nth-child(4) {
+  left: 56vw;
+  top: 78vh;
+  animation-delay: 0.12s;
+}
+
+.work-letter:nth-child(5) {
+  left: 72vw;
+  top: 9vh;
+  animation-delay: 0.16s;
+}
+
+.work-letter:nth-child(6) {
+  left: 84vw;
+  top: 74vh;
+  animation-delay: 0.2s;
+}
+
+.work-letter:nth-child(7) {
+  left: 86vw;
+  top: 22vh;
+  animation-delay: 0.24s;
+}
+
+.work-letter:nth-child(8) {
+  left: 90vw;
+  top: 63vh;
+  animation-delay: 0.28s;
+}
+
+.work-letter:nth-child(5):last-child {
+  left: 82vw;
+  top: 13vh;
+}
+
 .work-counter {
   position: absolute;
   inset: 0;

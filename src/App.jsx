@@ -7,6 +7,7 @@ const previewAnimation =
 const workProjects = [
   {
     number: '01',
+    word: 'Mundo',
     href: '/marketing',
     eyebrow: 'Estrategia digital',
     title: ['Marketing'],
@@ -33,6 +34,7 @@ const workProjects = [
   },
   {
     number: '02',
+    word: 'de',
     href: '/diseno-grafico',
     eyebrow: 'Identidad visual',
     title: ['Diseno', 'grafico'],
@@ -59,6 +61,7 @@ const workProjects = [
   },
   {
     number: '03',
+    word: 'Ideas',
     href: '/edicion-video',
     eyebrow: 'Audiovisual',
     title: ['Edicion', 'de video'],
@@ -85,6 +88,7 @@ const workProjects = [
   },
   {
     number: '04',
+    word: 'valiosas',
     href: '/proyecto-personal',
     eyebrow: 'Exploracion propia',
     title: ['Proyecto', 'personal'],
