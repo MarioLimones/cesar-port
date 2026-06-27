@@ -7,9 +7,7 @@ const previewAnimation =
 const workProjects = [
   {
     number: '01',
-    word: 'Mundo',
     href: '/marketing',
-    eyebrow: 'Estrategia digital',
     title: ['Marketing'],
     subtitle: 'Campanas, contenido y acciones pensadas para que una marca entre en conversacion.',
     background: '#0b0e0f',
@@ -34,9 +32,7 @@ const workProjects = [
   },
   {
     number: '02',
-    word: 'de',
     href: '/diseno-grafico',
-    eyebrow: 'Identidad visual',
     title: ['Diseno', 'grafico'],
     subtitle: 'Piezas visuales, composicion y sistemas graficos con una mirada mas editorial.',
     background: '#162b64',
@@ -61,9 +57,7 @@ const workProjects = [
   },
   {
     number: '03',
-    word: 'Ideas',
     href: '/edicion-video',
-    eyebrow: 'Audiovisual',
     title: ['Edicion', 'de video'],
     subtitle: 'Ritmo, montaje y narrativa para piezas que se sienten fluidas desde el primer segundo.',
     background: '#101314',
@@ -88,9 +82,7 @@ const workProjects = [
   },
   {
     number: '04',
-    word: 'valiosas',
     href: '/proyecto-personal',
-    eyebrow: 'Exploracion propia',
     title: ['Proyecto', 'personal'],
     subtitle: 'Conceptos, pruebas y direccion propia para convertir una intuicion en algo visible.',
     background: '#351121',
@@ -115,6 +107,57 @@ const workProjects = [
   },
 ]
 
+const marketingPanels = [
+  {
+    variant: 'intro',
+    cta: 'Ver proyecto',
+    title: 'Marketing integral',
+    text: [
+      'Te damos la bienvenida a una seccion creada para presentar estrategia, contenido y piezas visuales con una navegacion inmersiva, horizontal y fluida.',
+      'Cada bloque funciona como una parada de campana: imagen protagonista, mensaje directo y una transicion suave hacia el siguiente momento.',
+    ],
+    image:
+      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80',
+    alt: 'Estudio moderno con mesas de trabajo y luz natural',
+  },
+  {
+    variant: 'feature',
+    kicker: 'Estrategia',
+    title: 'Ideas que entran rapido',
+    text: 'Campanas con ritmo, jerarquia clara y piezas preparadas para que el mensaje se entienda en segundos sin perder caracter.',
+    image:
+      'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80',
+    detailImage:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1100&q=80',
+    alt: 'Equipo creativo revisando una campana',
+    detailAlt: 'Panel de datos digitales',
+  },
+  {
+    variant: 'feature',
+    kicker: 'Contenido',
+    title: 'Sistema visual flexible',
+    text: 'Bloques grandes, amarillo principal y fondos oscuros para mantener la personalidad de la web mientras el contenido respira.',
+    image:
+      'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1600&q=80',
+    detailImage:
+      'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1100&q=80',
+    alt: 'Arquitectura geometrica de colores intensos',
+    detailAlt: 'Mesa de trabajo con material de marketing',
+  },
+  {
+    variant: 'feature',
+    kicker: 'Activacion',
+    title: 'Campanas en movimiento',
+    text: 'La experiencia se abre como una ventana inmersiva y vuelve atras sin salir de la pagina, manteniendo la navegacion centrada en Marketing.',
+    image:
+      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80',
+    detailImage:
+      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1100&q=80',
+    alt: 'Portatil con trabajo creativo',
+    detailAlt: 'Estudio de diseno con escritorio y pared visual',
+  },
+]
+
 const socialLinks = [
   {
     label: 'LinkedIn',
@@ -133,16 +176,13 @@ const socialLinks = [
   },
 ]
 
-const ideaText = 'En un mundo de ruido, las ideas son lo más valioso'
+const ideaText = 'En un mundo de ruido, las ideas son Lo Más Valioso'
 const ideaWords = ideaText.split(' ')
 
 function IdeaReveal() {
   const [ideaProgress, setIdeaProgress] = useState(0)
   const sectionRef = useRef(null)
   const frameRef = useRef(null)
-  const lastYRef = useRef(0)
-  const progressRef = useRef(0)
-  const jumpRef = useRef(false)
 
   useEffect(() => {
     const updateIdeaProgress = () => {
@@ -151,22 +191,7 @@ function IdeaReveal() {
 
       const scrollSpace = section.offsetHeight - window.innerHeight
       const nextProgress = scrollSpace > 0 ? -section.getBoundingClientRect().top / scrollSpace : 0
-      const progress = Math.max(0, Math.min(1, nextProgress))
-      const previousProgress = progressRef.current
-      const scrollingDown = window.scrollY > lastYRef.current
-      lastYRef.current = window.scrollY
-      progressRef.current = progress
-
-      setIdeaProgress(progress)
-
-      if (progress < 0.98) jumpRef.current = false
-      if (previousProgress < 0.98 && progress >= 0.98 && scrollingDown && !jumpRef.current) {
-        jumpRef.current = true
-        window.scrollTo({
-          top: section.nextElementSibling?.offsetTop ?? section.offsetTop + section.offsetHeight,
-          behavior: 'smooth',
-        })
-      }
+      setIdeaProgress(Math.max(0, Math.min(1, nextProgress)))
     }
 
     const onScroll = () => {
@@ -220,7 +245,162 @@ function IdeaReveal() {
   )
 }
 
-function WorkStory() {
+function MarketingGallery({ isOpen, onClose }) {
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const scrollRef = useRef(null)
+  const targetScrollRef = useRef(0)
+  const frameRef = useRef(null)
+
+  const moveGallery = (delta) => {
+    const element = scrollRef.current
+    if (!element) return
+
+    const maxScroll = element.scrollWidth - element.clientWidth
+    targetScrollRef.current = Math.max(0, Math.min(maxScroll, targetScrollRef.current + delta))
+
+    if (frameRef.current) return
+
+    const tick = () => {
+      const distance = targetScrollRef.current - element.scrollLeft
+      element.scrollLeft += distance * 0.16
+
+      if (Math.abs(distance) > 0.45) {
+        frameRef.current = requestAnimationFrame(tick)
+        return
+      }
+
+      element.scrollLeft = targetScrollRef.current
+      frameRef.current = null
+    }
+
+    frameRef.current = requestAnimationFrame(tick)
+  }
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const previousOverflow = document.body.style.overflow
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') onClose()
+    }
+
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isOpen, onClose])
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const onWindowWheel = (event) => {
+      event.preventDefault()
+      moveGallery(event.deltaY + event.deltaX)
+    }
+
+    window.addEventListener('wheel', onWindowWheel, { passive: false })
+
+    return () => {
+      window.removeEventListener('wheel', onWindowWheel)
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    if (!isOpen || !scrollRef.current) return undefined
+
+    const element = scrollRef.current
+    const updateProgress = () => {
+      const maxScroll = element.scrollWidth - element.clientWidth
+      targetScrollRef.current = element.scrollLeft
+      setScrollProgress(maxScroll > 0 ? element.scrollLeft / maxScroll : 0)
+    }
+
+    element.scrollLeft = 0
+    targetScrollRef.current = 0
+    updateProgress()
+    element.addEventListener('scroll', updateProgress, { passive: true })
+    window.addEventListener('resize', updateProgress)
+
+    return () => {
+      cancelAnimationFrame(frameRef.current)
+      element.removeEventListener('scroll', updateProgress)
+      window.removeEventListener('resize', updateProgress)
+    }
+  }, [isOpen])
+
+  if (!isOpen) return null
+
+  return (
+    <div className="marketing-gallery-shell">
+      <div
+        className="marketing-gallery-scroll"
+        ref={scrollRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Galeria del proyecto"
+      >
+        <div className="marketing-gallery-actions">
+          <button className="marketing-gallery-back" type="button" onClick={onClose}>
+            <span aria-hidden="true">←</span>
+            Atrás
+          </button>
+          <a className="marketing-gallery-link" href="#marketing" onClick={onClose}>
+            {marketingPanels[0].cta}
+          </a>
+        </div>
+
+        <div className="marketing-gallery-progress" aria-hidden="true">
+          <span style={{ transform: `scaleX(${Math.max(0.05, scrollProgress)})` }} />
+        </div>
+
+        <div className="marketing-gallery-track">
+          {marketingPanels.map((panel) => (
+            <article
+              className={`marketing-gallery-panel marketing-gallery-panel-${panel.variant}`}
+              key={panel.title}
+            >
+              {panel.variant === 'intro' ? (
+                <>
+                  <button className="marketing-gallery-image" type="button" aria-label={panel.alt}>
+                    <img src={panel.image} alt="" loading="lazy" />
+                    <span className="marketing-gallery-zoom" aria-hidden="true">↗</span>
+                  </button>
+                  <div className="marketing-gallery-copy">
+                    <h2>{panel.title}</h2>
+                    {panel.text.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <img className="marketing-gallery-bg" src={panel.image} alt="" loading="lazy" />
+                  <div className="marketing-gallery-copy">
+                    <span>{panel.kicker}</span>
+                    <h2>{panel.title}</h2>
+                    <p>{panel.text}</p>
+                  </div>
+                  <button
+                    className="marketing-gallery-detail"
+                    type="button"
+                    aria-label={panel.detailAlt}
+                  >
+                    <img src={panel.detailImage} alt="" loading="lazy" />
+                  </button>
+                </>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function WorkStory({ isMarketingOpen, onOpenMarketing }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const sectionRef = useRef(null)
   const activeIndexRef = useRef(0)
@@ -255,7 +435,7 @@ function WorkStory() {
 
   useEffect(() => {
     const section = sectionRef.current
-    if (!section) return undefined
+    if (!section || isMarketingOpen) return undefined
 
     const isInsideWork = () => {
       const rect = section.getBoundingClientRect()
@@ -323,11 +503,9 @@ function WorkStory() {
       window.removeEventListener('touchmove', onTouchMove)
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [])
+  }, [isMarketingOpen])
 
   const activeProject = workProjects[activeIndex] ?? workProjects[0]
-  const activeWord = activeProject?.word ?? ''
-
   return (
     <section
       className="work-story"
@@ -343,11 +521,6 @@ function WorkStory() {
           '--work-glow': activeProject.glow,
         }}
       >
-        <div className="work-counter" aria-hidden="true">
-          <span>{activeProject.number}</span>
-          <span>/{String(workProjects.length).padStart(2, '0')}</span>
-        </div>
-
         <div className="work-stage">
           {workProjects.map((project, index) => (
             <article
@@ -366,30 +539,30 @@ function WorkStory() {
                 ))}
               </div>
               <div className="work-copy">
-                <span className="work-eyebrow">{project.eyebrow}</span>
                 <h2>
-                  <a className="work-title-link" href={project.href}>
-                    {project.title.map((line) => (
-                      <span key={line}>{line}</span>
-                    ))}
-                  </a>
+                  {project.number === '01' ? (
+                    <button
+                      className="work-title-link work-title-button"
+                      type="button"
+                      aria-label="Abrir pieza destacada de marketing"
+                      onClick={onOpenMarketing}
+                    >
+                      {project.title.map((line) => (
+                        <span key={line}>{line}</span>
+                      ))}
+                    </button>
+                  ) : (
+                    <a className="work-title-link" href={project.href}>
+                      {project.title.map((line) => (
+                        <span key={line}>{line}</span>
+                      ))}
+                    </a>
+                  )}
                 </h2>
                 <p>{project.subtitle}</p>
               </div>
             </article>
           ))}
-          <p
-            className="work-word"
-            data-word={activeWord.toLowerCase()}
-            aria-label={activeWord}
-            key={activeWord}
-          >
-            {activeWord.toUpperCase().split('').map((letter, index) => (
-              <span className="work-letter" aria-hidden="true" key={`${letter}-${index}`}>
-                {letter}
-              </span>
-            ))}
-          </p>
         </div>
       </div>
 
@@ -404,6 +577,7 @@ function WorkStory() {
 
 export default function App() {
   const [arrowProgress, setArrowProgress] = useState(0)
+  const [isMarketingOpen, setIsMarketingOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setArrowProgress(Math.min(window.scrollY / 700, 1))
@@ -471,7 +645,11 @@ export default function App() {
       </section>
 
       <IdeaReveal />
-      <WorkStory />
+      <WorkStory
+        isMarketingOpen={isMarketingOpen}
+        onOpenMarketing={() => setIsMarketingOpen(true)}
+      />
+      <MarketingGallery isOpen={isMarketingOpen} onClose={() => setIsMarketingOpen(false)} />
     </main>
   )
 }
