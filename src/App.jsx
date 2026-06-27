@@ -133,7 +133,7 @@ const socialLinks = [
   },
 ]
 
-const ideaText = 'En un mundo de ruido, las ideas son Lo más valioso'
+const ideaText = 'En un mundo de ruido, las ideas son lo más valioso'
 const ideaWords = ideaText.split(' ')
 
 function IdeaReveal() {
