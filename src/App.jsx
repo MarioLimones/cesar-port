@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 const previewAnimation =
@@ -110,7 +110,7 @@ const workProjects = [
 const marketingPanels = [
   {
     variant: 'intro',
-    cta: 'Ver proyecto',
+    cta: 'Contáctame',
     title: 'Marketing integral',
     text: [
       'Te damos la bienvenida a una seccion creada para presentar estrategia, contenido y piezas visuales con una navegacion inmersiva, horizontal y fluida.',
@@ -155,6 +155,59 @@ const marketingPanels = [
       'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1100&q=80',
     alt: 'Portatil con trabajo creativo',
     detailAlt: 'Estudio de diseno con escritorio y pared visual',
+  },
+]
+
+const koustSections = [
+  {
+    kicker: 'Identidad',
+    title: 'Negro base, amarillo golpe.',
+    text: 'Koust puede presentarse con una entrada directa: marca grande, mucho contraste y mensajes cortos para que cada bloque se sienta como una pieza de campana.',
+    image: '/koust-logo.png',
+    alt: 'Logo de Koust',
+  },
+  {
+    kicker: 'Contenido',
+    title: 'Espacio para producto, texto e imagen.',
+    text: 'La estructura deja hueco para editoriales, renders, fotos de producto o manifiesto de marca sin romper el ritmo de la ventana.',
+    image:
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Modelo con ropa negra en exterior urbano',
+  },
+  {
+    kicker: 'Sistema',
+    title: 'Secciones con entrada suave.',
+    text: 'Cada bloque entra con transicion, contraste alto y composiciones alternas para que el scroll no parezca una pagina estatica.',
+    image:
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Paisaje con luz calida',
+  },
+]
+
+const koustGalleryItems = [
+  {
+    src: '/koust-logo.png',
+    alt: 'Logo de Koust',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80',
+    alt: 'Look urbano en negro',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=80',
+    alt: 'Camiseta negra sobre percha',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80',
+    alt: 'Mesa visual para direccion de marca',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80',
+    alt: 'Composicion grafica intensa',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
+    alt: 'Imagen editorial con luz calida',
   },
 ]
 
@@ -247,22 +300,23 @@ function IdeaReveal() {
 
 function MarketingGallery({ isOpen, onClose }) {
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [isClosing, setIsClosing] = useState(false)
   const scrollRef = useRef(null)
   const targetScrollRef = useRef(0)
   const frameRef = useRef(null)
+  const wheelListenerRef = useRef(null)
+  const wheelMoveRef = useRef(null)
+  const closeTimerRef = useRef(null)
 
-  const moveGallery = (delta) => {
+  const animateGallery = () => {
     const element = scrollRef.current
     if (!element) return
-
-    const maxScroll = element.scrollWidth - element.clientWidth
-    targetScrollRef.current = Math.max(0, Math.min(maxScroll, targetScrollRef.current + delta))
 
     if (frameRef.current) return
 
     const tick = () => {
       const distance = targetScrollRef.current - element.scrollLeft
-      element.scrollLeft += distance * 0.16
+      element.scrollLeft += distance * 0.14
 
       if (Math.abs(distance) > 0.45) {
         frameRef.current = requestAnimationFrame(tick)
@@ -276,12 +330,62 @@ function MarketingGallery({ isOpen, onClose }) {
     frameRef.current = requestAnimationFrame(tick)
   }
 
+  const moveGallery = (delta) => {
+    const element = scrollRef.current
+    if (!element) return
+
+    const maxScroll = element.scrollWidth - element.clientWidth
+    targetScrollRef.current = Math.max(0, Math.min(maxScroll, targetScrollRef.current + delta))
+    animateGallery()
+  }
+
+  wheelMoveRef.current = moveGallery
+
+  const setScrollElement = useCallback((node) => {
+    if (scrollRef.current && wheelListenerRef.current) {
+      scrollRef.current.removeEventListener('wheel', wheelListenerRef.current)
+    }
+
+    scrollRef.current = node
+
+    if (!node) {
+      wheelListenerRef.current = null
+      return
+    }
+
+    const listener = (event) => {
+      event.preventDefault()
+      wheelMoveRef.current?.(event.deltaY + event.deltaX)
+    }
+
+    wheelListenerRef.current = listener
+    node.addEventListener('wheel', listener, { passive: false })
+  }, [])
+
+  const closeGallery = useCallback(() => {
+    if (isClosing) return
+
+    setIsClosing(true)
+    closeTimerRef.current = window.setTimeout(() => {
+      setIsClosing(false)
+      onClose()
+    }, 260)
+  }, [isClosing, onClose])
+
+  useEffect(() => {
+    if (isOpen) setIsClosing(false)
+
+    return () => {
+      window.clearTimeout(closeTimerRef.current)
+    }
+  }, [isOpen])
+
   useEffect(() => {
     if (!isOpen) return undefined
 
     const previousOverflow = document.body.style.overflow
     const onKeyDown = (event) => {
-      if (event.key === 'Escape') onClose()
+      if (event.key === 'Escape') closeGallery()
     }
 
     document.body.style.overflow = 'hidden'
@@ -291,22 +395,7 @@ function MarketingGallery({ isOpen, onClose }) {
       document.body.style.overflow = previousOverflow
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [isOpen, onClose])
-
-  useEffect(() => {
-    if (!isOpen) return undefined
-
-    const onWindowWheel = (event) => {
-      event.preventDefault()
-      moveGallery(event.deltaY + event.deltaX)
-    }
-
-    window.addEventListener('wheel', onWindowWheel, { passive: false })
-
-    return () => {
-      window.removeEventListener('wheel', onWindowWheel)
-    }
-  }, [isOpen])
+  }, [isOpen, closeGallery])
 
   useEffect(() => {
     if (!isOpen || !scrollRef.current) return undefined
@@ -314,7 +403,7 @@ function MarketingGallery({ isOpen, onClose }) {
     const element = scrollRef.current
     const updateProgress = () => {
       const maxScroll = element.scrollWidth - element.clientWidth
-      targetScrollRef.current = element.scrollLeft
+      if (!frameRef.current) targetScrollRef.current = element.scrollLeft
       setScrollProgress(maxScroll > 0 ? element.scrollLeft / maxScroll : 0)
     }
 
@@ -326,6 +415,7 @@ function MarketingGallery({ isOpen, onClose }) {
 
     return () => {
       cancelAnimationFrame(frameRef.current)
+      frameRef.current = null
       element.removeEventListener('scroll', updateProgress)
       window.removeEventListener('resize', updateProgress)
     }
@@ -334,20 +424,25 @@ function MarketingGallery({ isOpen, onClose }) {
   if (!isOpen) return null
 
   return (
-    <div className="marketing-gallery-shell">
+    <div className={`marketing-gallery-shell${isClosing ? ' is-closing' : ''}`}>
       <div
         className="marketing-gallery-scroll"
-        ref={scrollRef}
+        ref={setScrollElement}
         role="dialog"
         aria-modal="true"
         aria-label="Galeria del proyecto"
       >
         <div className="marketing-gallery-actions">
-          <button className="marketing-gallery-back" type="button" onClick={onClose}>
+          <button className="marketing-gallery-back" type="button" onClick={closeGallery}>
             <span aria-hidden="true">←</span>
             Atrás
           </button>
-          <a className="marketing-gallery-link" href="#marketing" onClick={onClose}>
+          <a
+            className="marketing-gallery-link"
+            href={socialLinks[0].href}
+            target="_blank"
+            rel="noreferrer"
+          >
             {marketingPanels[0].cta}
           </a>
         </div>
@@ -400,7 +495,100 @@ function MarketingGallery({ isOpen, onClose }) {
   )
 }
 
-function WorkStory({ isMarketingOpen, onOpenMarketing }) {
+function PersonalProject({ isOpen, onClose }) {
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const previousOverflow = document.body.style.overflow
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') onClose()
+    }
+
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isOpen, onClose])
+
+  if (!isOpen) return null
+
+  return (
+    <div className="personal-project-shell">
+      <div
+        className="personal-project-scroll"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Proyecto personal Koust"
+      >
+        <div className="personal-project-actions">
+          <button className="personal-project-back" type="button" onClick={onClose}>
+            <span aria-hidden="true">←</span>
+            Atras
+          </button>
+        </div>
+
+        <section className="personal-project-hero" aria-label="Video principal de Koust">
+          <video
+            className="personal-project-video"
+            src="/RTO-finalizado.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          <div className="personal-project-hero-copy">
+            <p>K-O-U-S-T</p>
+            <h2>Koust</h2>
+          </div>
+        </section>
+
+        <section className="personal-project-intro">
+          <p>
+            Una ventana pensada para que la marca respire en negro y amarillo: primero impacto,
+            despues narrativa, piezas visuales y bloques preparados para crecer con contenido real.
+          </p>
+        </section>
+
+        <section className="personal-project-gallery" aria-label="Galeria visual de Koust">
+          <div className="personal-project-gallery-copy">
+            <span>Galeria</span>
+            <h3>Muchas piezas, un mismo pulso.</h3>
+            <p>
+              Un carrusel pensado para campanas, producto, detalles, making of y visuales de marca.
+            </p>
+          </div>
+          <div className="personal-project-carousel" aria-label="Carrusel de imagenes">
+            {koustGalleryItems.map((item) => (
+              <figure className="personal-project-card" key={item.src}>
+                <img src={item.src} alt={item.alt} loading="lazy" />
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section className="personal-project-sections" aria-label="Estructura de contenido Koust">
+          {koustSections.map((section, index) => (
+            <article className="personal-project-section" key={section.title}>
+              <div className="personal-project-copy">
+                <span>{section.kicker}</span>
+                <h3>{section.title}</h3>
+                <p>{section.text}</p>
+              </div>
+              <figure className="personal-project-media">
+                <img src={section.image} alt={section.alt} loading={index === 0 ? 'eager' : 'lazy'} />
+              </figure>
+            </article>
+          ))}
+        </section>
+      </div>
+    </div>
+  )
+}
+
+function WorkStory({ isMarketingOpen, isPersonalOpen, onOpenMarketing, onOpenPersonal }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const sectionRef = useRef(null)
   const activeIndexRef = useRef(0)
@@ -435,7 +623,7 @@ function WorkStory({ isMarketingOpen, onOpenMarketing }) {
 
   useEffect(() => {
     const section = sectionRef.current
-    if (!section || isMarketingOpen) return undefined
+    if (!section || isMarketingOpen || isPersonalOpen) return undefined
 
     const isInsideWork = () => {
       const rect = section.getBoundingClientRect()
@@ -503,7 +691,7 @@ function WorkStory({ isMarketingOpen, onOpenMarketing }) {
       window.removeEventListener('touchmove', onTouchMove)
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [isMarketingOpen])
+  }, [isMarketingOpen, isPersonalOpen])
 
   const activeProject = workProjects[activeIndex] ?? workProjects[0]
   return (
@@ -540,12 +728,16 @@ function WorkStory({ isMarketingOpen, onOpenMarketing }) {
               </div>
               <div className="work-copy">
                 <h2>
-                  {project.number === '01' ? (
+                  {project.number === '01' || project.number === '04' ? (
                     <button
                       className="work-title-link work-title-button"
                       type="button"
-                      aria-label="Abrir pieza destacada de marketing"
-                      onClick={onOpenMarketing}
+                      aria-label={
+                        project.number === '01'
+                          ? 'Abrir pieza destacada de marketing'
+                          : 'Abrir proyecto personal Koust'
+                      }
+                      onClick={project.number === '01' ? onOpenMarketing : onOpenPersonal}
                     >
                       {project.title.map((line) => (
                         <span key={line}>{line}</span>
@@ -578,6 +770,7 @@ function WorkStory({ isMarketingOpen, onOpenMarketing }) {
 export default function App() {
   const [arrowProgress, setArrowProgress] = useState(0)
   const [isMarketingOpen, setIsMarketingOpen] = useState(false)
+  const [isPersonalOpen, setIsPersonalOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setArrowProgress(Math.min(window.scrollY / 700, 1))
@@ -591,7 +784,7 @@ export default function App() {
     <main className="home" aria-label="Cesar portfolio home">
       <nav className="top-nav" aria-label="Navegacion principal">
         <a className="brand" href="/" aria-label="Cesar portfolio">
-          Cesar
+          César V.
         </a>
         <div className="social-links">
           {socialLinks.map((link) => (
@@ -626,7 +819,7 @@ export default function App() {
         </div>
 
         <div className="portfolio-bar">
-          <p className="signature">Cesar portfolio 2026</p>
+          <p className="signature">César portfolio 2026</p>
           <button className="slide-button" type="button" aria-label="Deslizar">
             <span>Deslizar</span>
           </button>
@@ -647,9 +840,12 @@ export default function App() {
       <IdeaReveal />
       <WorkStory
         isMarketingOpen={isMarketingOpen}
+        isPersonalOpen={isPersonalOpen}
         onOpenMarketing={() => setIsMarketingOpen(true)}
+        onOpenPersonal={() => setIsPersonalOpen(true)}
       />
       <MarketingGallery isOpen={isMarketingOpen} onClose={() => setIsMarketingOpen(false)} />
+      <PersonalProject isOpen={isPersonalOpen} onClose={() => setIsPersonalOpen(false)} />
     </main>
   )
 }
