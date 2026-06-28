@@ -1,0 +1,103 @@
+- main "Cesar portfolio home" [ref=e3]:
+  - navigation "Navegacion principal" [ref=e4]:
+    - link "Cesar portfolio" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - text: César V.
+    - generic [ref=e6]:
+      - link "Marketing" [ref=e7] [cursor=pointer]:
+        - /url: "#marketing"
+      - link "Diseño gráfico" [ref=e8] [cursor=pointer]:
+        - /url: "#diseno-grafico"
+      - link "Edición de vídeo" [ref=e9] [cursor=pointer]:
+        - /url: "#edicion-video"
+      - link "Proyecto personal" [ref=e10] [cursor=pointer]:
+        - /url: "#proyecto-personal"
+    - generic [ref=e11]:
+      - link "LinkedIn" [ref=e12] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/c%C3%A9sar-velasco-murillo-441aaa2b6/
+        - img [ref=e13]
+      - link "Instagram" [ref=e15] [cursor=pointer]:
+        - /url: https://www.instagram.com/ceesarvm_/
+        - img [ref=e16]
+      - link "TikTok" [ref=e18] [cursor=pointer]:
+        - /url: https://www.tiktok.com/@vesco.kst
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - generic "Vista previa del portfolio" [ref=e24]:
+      - generic "Animacion de muestra" [ref=e26]
+    - generic [ref=e27]:
+      - paragraph [ref=e28]: César portfolio 2026
+      - button "Deslizar" [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: Deslizar
+  - region "Frase principal" [ref=e31]:
+    - paragraph [ref=e33]:
+      - generic [ref=e34]: En
+      - generic [ref=e35]: un
+      - generic [ref=e36]: mundo
+      - generic [ref=e37]: de
+      - generic [ref=e38]: ruido,
+      - generic [ref=e39]: las
+      - generic [ref=e40]: ideas
+      - generic [ref=e41]: son
+      - generic [ref=e42]: Lo
+      - generic [ref=e43]: Más
+      - generic [ref=e44]: Valioso
+  - region "Marketing, diseño grafico, edicion de video y proyecto personal" [ref=e45]:
+    - generic [ref=e47]:
+      - article:
+        - generic:
+          - figure:
+            - img
+          - figure:
+            - img
+          - figure:
+            - img
+        - generic:
+          - heading [level=2]:
+            - button:
+              - generic: Marketing
+          - paragraph: Campanas, contenido y acciones pensadas para que una marca entre en conversacion.
+      - article:
+        - generic:
+          - figure:
+            - img
+          - figure:
+            - img
+          - figure:
+            - img
+        - generic:
+          - heading [level=2]:
+            - link:
+              - /url: /diseno-grafico
+              - generic: Diseño
+              - generic: gráfico
+          - paragraph: Piezas visuales, composicion y sistemas graficos con una mirada mas editorial.
+      - article:
+        - generic:
+          - figure:
+            - img
+          - figure:
+            - img
+          - figure:
+            - img
+        - generic:
+          - heading [level=2]:
+            - link:
+              - /url: /edicion-video
+              - generic: Edicion
+              - generic: de video
+          - paragraph: Ritmo, montaje y narrativa para piezas que se sienten fluidas desde el primer segundo.
+      - article [ref=e61]:
+        - generic [ref=e62]:
+          - figure [ref=e63]:
+            - img [ref=e64]
+          - figure [ref=e65]:
+            - img [ref=e66]
+          - figure [ref=e67]:
+            - img [ref=e68]
+        - generic [ref=e69]:
+          - heading "Abrir proyecto personal Koust" [level=2] [ref=e70]:
+            - button "Abrir proyecto personal Koust" [ref=e71] [cursor=pointer]:
+              - generic [ref=e72]: Proyecto
+              - generic [ref=e73]: personal
+          - paragraph [ref=e74]: Conceptos, pruebas y direccion propia para convertir una intuicion en algo visible.

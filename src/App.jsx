@@ -33,7 +33,7 @@ const workProjects = [
   {
     number: '02',
     href: '/diseno-grafico',
-    title: ['Diseno', 'grafico'],
+    title: ['Diseño', 'gráfico'],
     subtitle: 'Piezas visuales, composicion y sistemas graficos con una mirada mas editorial.',
     background: '#162b64',
     glow: 'rgba(95, 166, 255, 0.2)',
@@ -46,7 +46,7 @@ const workProjects = [
       {
         className: 'work-asset-lg work-asset-left',
         src: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
-        alt: 'Estudio de diseno con escritorio y pared visual',
+        alt: 'Estudio de diseño con escritorio y pared visual',
       },
       {
         className: 'work-asset-sm work-asset-right',
@@ -154,7 +154,7 @@ const marketingPanels = [
     detailImage:
       'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1100&q=80',
     alt: 'Portatil con trabajo creativo',
-    detailAlt: 'Estudio de diseno con escritorio y pared visual',
+    detailAlt: 'Estudio de diseño con escritorio y pared visual',
   },
 ]
 
@@ -163,53 +163,65 @@ const koustSections = [
     kicker: 'Identidad',
     title: 'Negro base, amarillo golpe.',
     text: 'Koust puede presentarse con una entrada directa: marca grande, mucho contraste y mensajes cortos para que cada bloque se sienta como una pieza de campana.',
-    image: '/koust-logo.png',
-    alt: 'Logo de Koust',
+    image: '/koust/Propuesta-Koust-2.png',
+    alt: 'Propuesta editorial Just Create de Koust',
   },
   {
     kicker: 'Contenido',
     title: 'Espacio para producto, texto e imagen.',
     text: 'La estructura deja hueco para editoriales, renders, fotos de producto o manifiesto de marca sin romper el ritmo de la ventana.',
-    image:
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Modelo con ropa negra en exterior urbano',
+    image: '/koust/3(4).png',
+    alt: 'Tres modelos con camisetas negras de Koust',
   },
   {
     kicker: 'Sistema',
     title: 'Secciones con entrada suave.',
     text: 'Cada bloque entra con transicion, contraste alto y composiciones alternas para que el scroll no parezca una pagina estatica.',
-    image:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Paisaje con luz calida',
+    image: '/koust/Grafiti7.png',
+    alt: 'Editorial con camisetas blancas de Koust',
   },
 ]
 
-const koustGalleryItems = [
-  {
-    src: '/koust-logo.png',
-    alt: 'Logo de Koust',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80',
-    alt: 'Look urbano en negro',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=80',
-    alt: 'Camiseta negra sobre percha',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=80',
-    alt: 'Mesa visual para direccion de marca',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80',
-    alt: 'Composicion grafica intensa',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
-    alt: 'Imagen editorial con luz calida',
-  },
+const koustGalleryImages = [
+  '1(4).png',
+  'Grafiti1.png',
+  '3(4).png',
+  '2(7).png',
+  '2(4).png',
+  'Grafiti7.png',
+  '1(5).png',
+  'Grafiti5.png',
+  '1(6).png',
+  'Grafiti3.png',
+  '3(5).png',
+  '3(7).png',
+  '4(6).png',
+  'Grafiti10.png',
+  '4(4).png',
+  'Grafiti8.png',
+  '2(5).png',
+  'Grafiti2.png',
+  '3(6).png',
+  'Grafiti6.png',
+  '4(5).png',
+  'Grafiti9.png',
+  '2(6).png',
+  'Grafiti4.png',
+  '4(7).png',
+  '5(6).png',
+  '5(4).png',
+  'Grafiti7.png',
+  '5(5).png',
+  'Grafiti1.png',
+  '6(3).png',
+  '6(4).png',
+  '1(7).png',
 ]
+
+const koustGalleryItems = koustGalleryImages.map((image) => ({
+  src: `/koust/${image}`,
+  alt: `Imagen editorial Koust ${image}`,
+}))
 
 const socialLinks = [
   {
@@ -230,6 +242,13 @@ const socialLinks = [
 ]
 
 const ideaText = 'En un mundo de ruido, las ideas son Lo Más Valioso'
+const topNavLinks = [
+  { label: 'Marketing', href: '#marketing' },
+  { label: 'Diseño gráfico', href: '#diseno-grafico' },
+  { label: 'Edición de vídeo', href: '#edicion-video' },
+  { label: 'Proyecto personal', href: '#proyecto-personal' },
+]
+
 const ideaWords = ideaText.split(' ')
 
 function IdeaReveal() {
@@ -496,12 +515,216 @@ function MarketingGallery({ isOpen, onClose }) {
 }
 
 function PersonalProject({ isOpen, onClose }) {
+  const [isClosing, setIsClosing] = useState(false)
+  const [isCarouselDragging, setIsCarouselDragging] = useState(false)
+  const [activeCarouselIndex, setActiveCarouselIndex] = useState(0)
+  const [zoomedItem, setZoomedItem] = useState(null)
+  const [carouselCursor, setCarouselCursor] = useState({ visible: false, x: 0, y: 0 })
+  const carouselItems = [...koustGalleryItems, ...koustGalleryItems, ...koustGalleryItems]
+  const carouselWrapRef = useRef(null)
+  const carouselRef = useRef(null)
+  const carouselTrackRef = useRef(null)
+  const carouselStateRef = useRef({
+    index: koustGalleryItems.length,
+    translate: 0,
+    timer: null,
+  })
+  const carouselDragRef = useRef({
+    isDragging: false,
+    pointerId: null,
+    moved: false,
+    itemIndex: null,
+    startX: 0,
+    startTranslate: 0,
+  })
+  const carouselClickRef = useRef(false)
+  const closeTimerRef = useRef(null)
+
+  const closeProject = useCallback(() => {
+    if (isClosing) return
+
+    setIsClosing(true)
+    closeTimerRef.current = window.setTimeout(() => {
+      setIsClosing(false)
+      onClose()
+    }, 260)
+  }, [isClosing, onClose])
+
+  useEffect(() => {
+    if (isOpen) setIsClosing(false)
+
+    return () => {
+      window.clearTimeout(closeTimerRef.current)
+    }
+  }, [isOpen])
+
+  const getCarouselTranslate = useCallback((index) => {
+    const carousel = carouselRef.current
+    const track = carouselTrackRef.current
+    const card = track?.querySelectorAll('.personal-project-card')[index]
+
+    if (!carousel || !card) return carouselStateRef.current.translate
+
+    return carousel.clientWidth / 2 - (card.offsetLeft + card.offsetWidth / 2)
+  }, [])
+
+  const moveCarouselToLoopIndex = useCallback((index, animate = true) => {
+    const track = carouselTrackRef.current
+    if (!track) return
+
+    const count = koustGalleryItems.length
+    const maxIndex = carouselItems.length - 1
+    const nextIndex = Math.max(0, Math.min(maxIndex, index))
+    const translate = getCarouselTranslate(nextIndex)
+
+    window.clearTimeout(carouselStateRef.current.timer)
+    carouselStateRef.current.index = nextIndex
+    carouselStateRef.current.translate = translate
+    track.style.transitionDuration = animate ? '800ms' : '0ms'
+    track.style.transform = `translate3d(${translate}px, 0, 0)`
+    setActiveCarouselIndex(nextIndex % count)
+
+    if (!animate) return
+
+    carouselStateRef.current.timer = window.setTimeout(() => {
+      const currentIndex = carouselStateRef.current.index
+      const normalizedIndex = count + (currentIndex % count)
+      if (currentIndex !== normalizedIndex) {
+        moveCarouselToLoopIndex(normalizedIndex, false)
+      }
+    }, 820)
+  }, [carouselItems.length, getCarouselTranslate])
+
+  const moveCarouselTo = useCallback((index) => {
+    const count = koustGalleryItems.length
+    const currentIndex = carouselStateRef.current.index
+    const currentOriginalIndex = currentIndex % count
+    let delta = index - currentOriginalIndex
+
+    if (delta > count / 2) delta -= count
+    if (delta < -count / 2) delta += count
+
+    moveCarouselToLoopIndex(currentIndex + delta)
+  }, [moveCarouselToLoopIndex])
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const resetCarousel = () => {
+      const count = koustGalleryItems.length
+      moveCarouselToLoopIndex(count + (carouselStateRef.current.index % count), false)
+    }
+
+    const frame = window.requestAnimationFrame(resetCarousel)
+    window.addEventListener('resize', resetCarousel)
+
+    return () => {
+      window.cancelAnimationFrame(frame)
+      window.clearTimeout(carouselStateRef.current.timer)
+      window.removeEventListener('resize', resetCarousel)
+    }
+  }, [isOpen, moveCarouselToLoopIndex])
+
+  const updateCarouselCursor = useCallback((event) => {
+    const wrap = carouselWrapRef.current
+    if (!wrap || event.pointerType !== 'mouse') return
+
+    const rect = wrap.getBoundingClientRect()
+    setCarouselCursor({
+      visible: true,
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    })
+  }, [])
+
+  const startCarouselDrag = useCallback((event) => {
+    if (event.button !== 0) return
+
+    const carousel = carouselRef.current
+    if (!carousel) return
+
+    const card = event.target.closest('.personal-project-card')
+    carouselDragRef.current = {
+      isDragging: true,
+      pointerId: event.pointerId,
+      moved: false,
+      itemIndex: card ? Number(card.dataset.carouselIndex) : null,
+      startX: event.clientX,
+      startTranslate: carouselStateRef.current.translate,
+    }
+    carousel.setPointerCapture(event.pointerId)
+    setIsCarouselDragging(true)
+  }, [])
+
+  const moveCarouselDrag = useCallback((event) => {
+    const carousel = carouselRef.current
+    const drag = carouselDragRef.current
+    if (!carousel || !drag.isDragging || drag.pointerId !== event.pointerId) return
+
+    event.preventDefault()
+    drag.moved = drag.moved || Math.abs(event.clientX - drag.startX) > 5
+    carouselStateRef.current.translate = drag.startTranslate + event.clientX - drag.startX
+
+    const track = carouselTrackRef.current
+    if (track) {
+      track.style.transitionDuration = '0ms'
+      track.style.transform = `translate3d(${carouselStateRef.current.translate}px, 0, 0)`
+    }
+  }, [])
+
+  const stopCarouselDrag = useCallback((event) => {
+    const drag = carouselDragRef.current
+    if (drag.pointerId !== null && event?.pointerId !== drag.pointerId) return
+    if (!drag.isDragging) return
+
+    if (!drag.moved && Number.isInteger(drag.itemIndex)) {
+      setZoomedItem(koustGalleryItems[drag.itemIndex])
+    }
+
+    if (drag.moved) {
+      const firstCard = carouselTrackRef.current?.querySelector('.personal-project-card')
+      const slideWidth = firstCard?.offsetWidth || 1
+      const delta = carouselStateRef.current.translate - drag.startTranslate
+      let steps = Math.round(-delta / slideWidth)
+
+      if (steps === 0 && Math.abs(delta) > 24) {
+        steps = delta < 0 ? 1 : -1
+      }
+
+      moveCarouselToLoopIndex(carouselStateRef.current.index + steps)
+    }
+
+    carouselClickRef.current = drag.moved
+    window.setTimeout(() => {
+      carouselClickRef.current = false
+    }, 120)
+    carouselDragRef.current = {
+      isDragging: false,
+      pointerId: null,
+      moved: false,
+      itemIndex: null,
+      startX: 0,
+      startTranslate: 0,
+    }
+    setIsCarouselDragging(false)
+  }, [moveCarouselToLoopIndex])
+
+  const openCarouselImage = useCallback((item) => {
+    if (carouselClickRef.current) return
+    setZoomedItem(item)
+  }, [])
+
   useEffect(() => {
     if (!isOpen) return undefined
 
     const previousOverflow = document.body.style.overflow
     const onKeyDown = (event) => {
-      if (event.key === 'Escape') onClose()
+      if (event.key === 'Escape' && zoomedItem) {
+        setZoomedItem(null)
+        return
+      }
+
+      if (event.key === 'Escape') closeProject()
     }
 
     document.body.style.overflow = 'hidden'
@@ -511,12 +734,12 @@ function PersonalProject({ isOpen, onClose }) {
       document.body.style.overflow = previousOverflow
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [isOpen, onClose])
+  }, [isOpen, closeProject, zoomedItem])
 
   if (!isOpen) return null
 
   return (
-    <div className="personal-project-shell">
+    <div className={`personal-project-shell${isClosing ? ' is-closing' : ''}`}>
       <div
         className="personal-project-scroll"
         role="dialog"
@@ -524,7 +747,7 @@ function PersonalProject({ isOpen, onClose }) {
         aria-label="Proyecto personal Koust"
       >
         <div className="personal-project-actions">
-          <button className="personal-project-back" type="button" onClick={onClose}>
+          <button className="personal-project-back" type="button" onClick={closeProject}>
             <span aria-hidden="true">←</span>
             Atras
           </button>
@@ -560,12 +783,63 @@ function PersonalProject({ isOpen, onClose }) {
               Un carrusel pensado para campanas, producto, detalles, making of y visuales de marca.
             </p>
           </div>
-          <div className="personal-project-carousel" aria-label="Carrusel de imagenes">
-            {koustGalleryItems.map((item) => (
-              <figure className="personal-project-card" key={item.src}>
-                <img src={item.src} alt={item.alt} loading="lazy" />
-              </figure>
-            ))}
+          <div
+            className="personal-project-carousel-wrap"
+            ref={carouselWrapRef}
+            onPointerMove={updateCarouselCursor}
+            onPointerLeave={() => setCarouselCursor({ visible: false, x: 0, y: 0 })}
+          >
+            <button
+              className="personal-project-carousel-nav personal-project-carousel-nav-prev"
+              type="button"
+              aria-label="Imagen anterior"
+              onClick={() => moveCarouselTo(activeCarouselIndex - 1)}
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <div
+              className={`personal-project-carousel${isCarouselDragging ? ' is-dragging' : ''}`}
+              ref={carouselRef}
+              aria-label="Carrusel de imagenes"
+              onPointerDown={startCarouselDrag}
+              onPointerMove={moveCarouselDrag}
+              onPointerUp={stopCarouselDrag}
+              onPointerCancel={stopCarouselDrag}
+              onLostPointerCapture={stopCarouselDrag}
+            >
+              <div className="personal-project-carousel-track" ref={carouselTrackRef}>
+                {carouselItems.map((item, index) => {
+                  const itemIndex = index % koustGalleryItems.length
+
+                  return (
+                    <button
+                      className="personal-project-card"
+                      type="button"
+                      aria-label={`Ampliar ${item.alt}`}
+                      data-active={itemIndex === activeCarouselIndex}
+                      data-carousel-index={itemIndex}
+                      key={`${item.src}-${index}`}
+                      onClick={() => openCarouselImage(item)}
+                    >
+                      <img src={item.src} alt={item.alt} loading="lazy" />
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+            <button
+              className="personal-project-carousel-nav personal-project-carousel-nav-next"
+              type="button"
+              aria-label="Imagen siguiente"
+              onClick={() => moveCarouselTo(activeCarouselIndex + 1)}
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+            <span
+              className={`personal-project-carousel-cursor${carouselCursor.visible ? ' is-visible' : ''}`}
+              style={{ transform: `translate(${carouselCursor.x}px, ${carouselCursor.y}px)` }}
+              aria-hidden="true"
+            />
           </div>
         </section>
 
@@ -584,6 +858,16 @@ function PersonalProject({ isOpen, onClose }) {
           ))}
         </section>
       </div>
+      {zoomedItem ? (
+        <button
+          className="personal-project-zoom"
+          type="button"
+          aria-label="Cerrar imagen ampliada"
+          onClick={() => setZoomedItem(null)}
+        >
+          <img src={zoomedItem.src} alt={zoomedItem.alt} />
+        </button>
+      ) : null}
     </div>
   )
 }
@@ -697,10 +981,9 @@ function WorkStory({ isMarketingOpen, isPersonalOpen, onOpenMarketing, onOpenPer
   return (
     <section
       className="work-story"
-      id="marketing"
       ref={sectionRef}
       style={{ '--work-count': workProjects.length }}
-      aria-label="Marketing, diseno grafico, edicion de video y proyecto personal"
+      aria-label="Marketing, diseño grafico, edicion de video y proyecto personal"
     >
       <div
         className="work-sticky"
@@ -760,7 +1043,12 @@ function WorkStory({ isMarketingOpen, isPersonalOpen, onOpenMarketing, onOpenPer
 
       <div className="work-markers" aria-hidden="true">
         {workProjects.map((project, index) => (
-          <div className="work-marker" data-work-marker={index} key={project.number} />
+          <div
+            className="work-marker"
+            id={project.href.slice(1)}
+            data-work-marker={index}
+            key={project.number}
+          />
         ))}
       </div>
     </section>
@@ -786,6 +1074,13 @@ export default function App() {
         <a className="brand" href="/" aria-label="Cesar portfolio">
           César V.
         </a>
+        <div className="section-links">
+          {topNavLinks.map((link) => (
+            <a className="section-link" href={link.href} key={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </div>
         <div className="social-links">
           {socialLinks.map((link) => (
             <a

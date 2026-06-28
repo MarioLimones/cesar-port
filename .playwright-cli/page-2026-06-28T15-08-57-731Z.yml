@@ -1,0 +1,781 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - generic [ref=e3]:
+    - generic [ref=e9]:
+      - generic [ref=e12]: Free Shipping on Orders $75+
+      - generic [ref=e15]: Free Returns for 365 Days
+    - banner [ref=e17]:
+      - generic [ref=e19]:
+        - menu [ref=e21]:
+          - menuitem "His" [ref=e22]:
+            - link "His" [ref=e23] [cursor=pointer]:
+              - /url: https://www.marinelayer.com/collections/guys-new
+          - menuitem "Hers" [ref=e24]:
+            - link "Hers" [ref=e25] [cursor=pointer]:
+              - /url: https://www.marinelayer.com/collections/gals-new
+          - menuitem "Last Call" [ref=e26]:
+            - link "Last Call" [ref=e27] [cursor=pointer]:
+              - /url: https://www.marinelayer.com/collections/guys-last-call
+        - link "Marine Layer" [ref=e29] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e30]: Marine Layer
+        - menu [ref=e34]:
+          - menuitem "Open search" [ref=e35]:
+            - button "Open search" [ref=e36] [cursor=pointer]:
+              - img "Search icon" [ref=e37]
+          - menuitem "Toggle minicart" [ref=e40]:
+            - button "Toggle minicart" [ref=e41] [cursor=pointer]:
+              - img "Shopping bag" [ref=e42]
+              - generic [ref=e46]: Bag
+      - complementary "Mobile Navigation" [ref=e48]:
+        - generic [ref=e49]:
+          - menu [ref=e50]:
+            - menuitem "His" [ref=e51]:
+              - button "His" [ref=e52]:
+                - generic [ref=e55]:
+                  - text: His
+                  - img [ref=e56]
+            - menuitem "Hers" [ref=e58]:
+              - button "Hers" [ref=e59]:
+                - generic [ref=e62]:
+                  - text: Hers
+                  - img [ref=e63]
+          - generic [ref=e65]:
+            - paragraph [ref=e66]: Featured
+            - menu [ref=e67]:
+              - menuitem "New for Him" [ref=e68]:
+                - link "New for Him" [ref=e69] [cursor=pointer]:
+                  - /url: https://www.marinelayer.com/collections/guys-new
+                  - generic [ref=e70]:
+                    - text: New for Him
+                    - img [ref=e71]
+              - menuitem "New for Her" [ref=e73]:
+                - link "New for Her" [ref=e74] [cursor=pointer]:
+                  - /url: https://www.marinelayer.com/collections/gals-new
+                  - generic [ref=e75]:
+                    - text: New for Her
+                    - img [ref=e76]
+              - menuitem "Last Call" [ref=e78]:
+                - link "Last Call" [ref=e79] [cursor=pointer]:
+                  - /url: https://www.marinelayer.com/collections/guys-last-call
+                  - generic [ref=e80]:
+                    - text: Last Call
+                    - img [ref=e81]
+              - menuitem "Our Stores" [ref=e83]:
+                - link "Our Stores" [ref=e84] [cursor=pointer]:
+                  - /url: https://www.marinelayer.com/pages/stores
+                  - generic [ref=e85]:
+                    - text: Our Stores
+                    - img [ref=e86]
+        - generic "His":
+          - button "Back to main menu" [ref=e88]:
+            - img
+            - text: His
+          - generic [ref=e90]:
+            - menu [ref=e91]:
+              - menuitem "Stretch Selvage Shirts | The button down that feels like a tee":
+                - generic:
+                  - button "Stretch Selvage Shirts | The button down that feels like a tee"
+              - 'menuitem "The #1 Hemp Tees | The most breathable tee of summer"':
+                - generic:
+                  - 'button "The #1 Hemp Tees | The most breathable tee of summer"'
+            - generic [ref=e92]:
+              - paragraph [ref=e93]: Featured
+              - menu [ref=e94]:
+                - menuitem "New Arrivals" [ref=e95]:
+                  - link "New Arrivals" [ref=e96] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-new
+                - menuitem "Best Sellers" [ref=e97]:
+                  - link "Best Sellers" [ref=e98] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/best-sellers-2
+                - menuitem "#1 Stretch Selvage" [ref=e99]:
+                  - link "#1 Stretch Selvage" [ref=e100] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-stretch-selvage
+                - menuitem "The Saturday Beach Shop" [ref=e101]:
+                  - link "The Saturday Beach Shop" [ref=e102] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/pages/saturday-beach
+                - menuitem "The Hemp Shop" [ref=e103]:
+                  - link "The Hemp Shop" [ref=e104] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/the-hemp-shop-2
+            - generic [ref=e105]:
+              - paragraph [ref=e106]: Clothes
+              - menu [ref=e107]:
+                - menuitem "Tees + Graphics" [ref=e108]:
+                  - link "Tees + Graphics" [ref=e109] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-tees-basics
+                - menuitem "Shirts" [ref=e110]:
+                  - link "Shirts" [ref=e111] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-buttondowns
+                - menuitem "Shorts + Swim" [ref=e112]:
+                  - link "Shorts + Swim" [ref=e113] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-shorts
+                - menuitem "Pants" [ref=e114]:
+                  - link "Pants" [ref=e115] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-pants
+                - menuitem "Henleys + Polos" [ref=e116]:
+                  - link "Henleys + Polos" [ref=e117] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-henleys-polos
+                - menuitem "Weekend Sport" [ref=e118]:
+                  - link "Weekend Sport" [ref=e119] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/weekend-sport-1
+                - menuitem "Sweatshirts" [ref=e120]:
+                  - link "Sweatshirts" [ref=e121] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/sweatshirts-1
+                - menuitem "Sweatpants" [ref=e122]:
+                  - link "Sweatpants" [ref=e123] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-sweatshirts-sweatpants
+                - menuitem "Sweaters" [ref=e124]:
+                  - link "Sweaters" [ref=e125] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-sweaters
+                - menuitem "Outerwear" [ref=e126]:
+                  - link "Outerwear" [ref=e127] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-outerwear
+                - menuitem "Last Call" [ref=e128]:
+                  - link "Last Call" [ref=e129] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-last-call
+            - generic [ref=e130]:
+              - paragraph [ref=e131]: Accessories
+              - menu [ref=e132]:
+                - menuitem "Socks" [ref=e133]:
+                  - link "Socks" [ref=e134] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-socks
+                - menuitem "Underwear" [ref=e135]:
+                  - link "Underwear" [ref=e136] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-boxers
+                - menuitem "Accessories" [ref=e137]:
+                  - link "Accessories" [ref=e138] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/guys-accessories
+                - menuitem "Re-Spun Kit" [ref=e139]:
+                  - link "Re-Spun Kit" [ref=e140] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/products/ml-take-back-bag-1
+        - generic "Hers":
+          - button "Back to main menu" [ref=e141]:
+            - img
+            - text: Hers
+          - generic [ref=e143]:
+            - menu [ref=e144]:
+              - 'menuitem "The #1 Allison Trouser | Your perfect summer travel pant"':
+                - generic:
+                  - 'button "The #1 Allison Trouser | Your perfect summer travel pant"'
+              - menuitem "The Softest Double Cloth | Airy sets are now in season":
+                - generic:
+                  - button "The Softest Double Cloth | Airy sets are now in season"
+            - generic [ref=e145]:
+              - paragraph [ref=e146]: Featured
+              - menu [ref=e147]:
+                - menuitem "New Arrivals" [ref=e148]:
+                  - link "New Arrivals" [ref=e149] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-new
+                - menuitem "Best Sellers" [ref=e150]:
+                  - link "Best Sellers" [ref=e151] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/best-sellers-1
+                - menuitem "The Double Cloth Shop" [ref=e152]:
+                  - link "The Double Cloth Shop" [ref=e153] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/the-double-cloth-shop
+                - menuitem "The Camila Dress Shop" [ref=e154]:
+                  - link "The Camila Dress Shop" [ref=e155] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/the-camila-collection
+                - menuitem "The Espresso Edit" [ref=e156]:
+                  - link "The Espresso Edit" [ref=e157] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/pages/the-espresso-edit
+                - menuitem "Cloud 9 Beach Shop" [ref=e158]:
+                  - link "Cloud 9 Beach Shop" [ref=e159] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/cloud-9-beach-shop
+            - generic [ref=e160]:
+              - paragraph [ref=e161]: Clothes
+              - menu [ref=e162]:
+                - menuitem "Dresses" [ref=e163]:
+                  - link "Dresses" [ref=e164] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-dresses
+                - menuitem "Skirts" [ref=e165]:
+                  - link "Skirts" [ref=e166] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/skirts
+                - menuitem "Shorts" [ref=e167]:
+                  - link "Shorts" [ref=e168] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-shorts
+                - menuitem "Tops" [ref=e169]:
+                  - link "Tops" [ref=e170] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-tops-buttondowns
+                - menuitem "Pants" [ref=e171]:
+                  - link "Pants" [ref=e172] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-pants-1
+                - menuitem "Swim" [ref=e173]:
+                  - link "Swim" [ref=e174] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/pages/ml-x-andie-swim-2026
+                - menuitem "Matching Sets" [ref=e175]:
+                  - link "Matching Sets" [ref=e176] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/womens-sets
+                - menuitem "Tees + Tanks" [ref=e177]:
+                  - link "Tees + Tanks" [ref=e178] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-tees-basics
+                - menuitem "Sweaters" [ref=e179]:
+                  - link "Sweaters" [ref=e180] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-sweaters
+                - menuitem "Lounge" [ref=e181]:
+                  - link "Lounge" [ref=e182] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-sweatshirts-sweatpants
+                - menuitem "Jackets" [ref=e183]:
+                  - link "Jackets" [ref=e184] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-outerwear
+                - menuitem "Last Call" [ref=e185]:
+                  - link "Last Call" [ref=e186] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-last-call
+            - generic [ref=e187]:
+              - paragraph [ref=e188]: Accessories
+              - menu [ref=e189]:
+                - menuitem "Socks" [ref=e190]:
+                  - link "Socks" [ref=e191] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-socks
+                - menuitem "Bags" [ref=e192]:
+                  - link "Bags" [ref=e193] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/gals-bags
+                - menuitem "Pins" [ref=e194]:
+                  - link "Pins" [ref=e195] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/collections/pins
+                - menuitem "Re-Spun Kit" [ref=e196]:
+                  - link "Re-Spun Kit" [ref=e197] [cursor=pointer]:
+                    - /url: https://www.marinelayer.com/products/ml-take-back-bag-1
+        - generic "About" [ref=e198]:
+          - button "Back to main menu":
+            - img
+            - text: About
+          - menu:
+            - menuitem "The Re-Spun Program See how we’re saving 650,000 lbs of clothes from landfills.":
+              - generic [ref=e200] [cursor=pointer]:
+                - button "The Re-Spun Program" [ref=e201]
+                - paragraph [ref=e203]: See how we’re saving 650,000 lbs of clothes from landfills.
+            - menuitem "Our Story We sure have come a long way from selling tees out of a bus.":
+              - generic [ref=e204] [cursor=pointer]:
+                - button "Our Story" [ref=e205]
+                - paragraph [ref=e207]: We sure have come a long way from selling tees out of a bus.
+            - menuitem "Proudly a B-Corp We making clothes that are good for people and the planet.":
+              - generic [ref=e208] [cursor=pointer]:
+                - button "Proudly a B-Corp" [ref=e209]
+                - paragraph [ref=e211]: We making clothes that are good for people and the planet.
+            - menuitem "Impact Report All the nerdy details that show we’re not an evil company.":
+              - generic [ref=e212] [cursor=pointer]:
+                - button "Impact Report" [ref=e213]
+                - paragraph [ref=e215]: All the nerdy details that show we’re not an evil company.
+  - main [ref=e216]:
+    - generic [ref=e225]:
+      - heading "Paradise Found" [level=1] [ref=e227]
+      - heading "Welcome to the long, sun-soaked days we wait all year for." [level=2] [ref=e229]
+      - generic [ref=e230]:
+        - button "New for Him" [ref=e231] [cursor=pointer]
+        - button "New for Her" [ref=e232] [cursor=pointer]
+    - generic [ref=e236]:
+      - heading "This Just In" [level=2] [ref=e237]
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - button "Tabbed Button" [ref=e240] [cursor=pointer]: All
+          - button "Tabbed Button" [ref=e241] [cursor=pointer]: Hers
+          - button "Tabbed Button" [ref=e242] [cursor=pointer]: His
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - generic [ref=e245]:
+              - link "Hemp Cotton Relaxed Tee Regular price $58" [ref=e247] [cursor=pointer]:
+                - /url: /products/relaxed-hemp-cotton-tee-21
+                - generic [ref=e250]:
+                  - paragraph [ref=e251]: Hemp Cotton Relaxed Tee
+                  - generic [ref=e252]:
+                    - generic [ref=e253]: Regular price
+                    - generic [ref=e254]: $58
+              - link "Oversized Hemp Graphic Tee Oversized Hemp Graphic Tee Regular price $58" [ref=e256] [cursor=pointer]:
+                - /url: /products/oversized-hemp-graphic-tee
+                - img "Oversized Hemp Graphic Tee" [ref=e259]
+                - generic [ref=e260]:
+                  - paragraph [ref=e261]: Oversized Hemp Graphic Tee
+                  - generic [ref=e262]:
+                    - generic [ref=e263]: Regular price
+                    - generic [ref=e264]: $58
+              - link "Zane Eyelet Resort Shirt Regular price $148" [ref=e266] [cursor=pointer]:
+                - /url: /products/eyelet-resort-shirt
+                - generic [ref=e269]:
+                  - paragraph [ref=e270]: Zane Eyelet Resort Shirt
+                  - generic [ref=e271]:
+                    - generic [ref=e272]: Regular price
+                    - generic [ref=e273]: $148
+              - link "Cloud 9 Terry Sweatshirt Regular price $108" [ref=e275] [cursor=pointer]:
+                - /url: /products/cloud-9-terry-sweatshirt-5
+                - generic [ref=e278]:
+                  - paragraph [ref=e279]: Cloud 9 Terry Sweatshirt
+                  - generic [ref=e280]:
+                    - generic [ref=e281]: Regular price
+                    - generic [ref=e282]: $108
+              - link "Greyson Sweater Polo Regular price $128" [ref=e284] [cursor=pointer]:
+                - /url: /products/greyson-sweater-polo-9
+                - generic [ref=e287]:
+                  - paragraph [ref=e288]: Greyson Sweater Polo
+                  - generic [ref=e289]:
+                    - generic [ref=e290]: Regular price
+                    - generic [ref=e291]: $128
+              - link "Jane Relaxed Linen Shirt Jane Relaxed Linen Shirt Regular price $128" [ref=e293] [cursor=pointer]:
+                - /url: /products/jane-relaxed-linen-shirt-4
+                - img "Jane Relaxed Linen Shirt" [ref=e296]
+                - generic [ref=e297]:
+                  - paragraph [ref=e298]: Jane Relaxed Linen Shirt
+                  - generic [ref=e299]:
+                    - generic [ref=e300]: Regular price
+                    - generic [ref=e301]: $128
+              - link "Rico Terry Resort Shirt Regular price $98" [ref=e303] [cursor=pointer]:
+                - /url: /products/rico-terry-resort-shirt
+                - generic [ref=e306]:
+                  - paragraph [ref=e307]: Rico Terry Resort Shirt
+                  - generic [ref=e308]:
+                    - generic [ref=e309]: Regular price
+                    - generic [ref=e310]: $98
+              - link "Coralina Scoop Tank Regular price $68" [ref=e312] [cursor=pointer]:
+                - /url: /products/coralina-scoop-tank-1
+                - generic [ref=e315]:
+                  - paragraph [ref=e316]: Coralina Scoop Tank
+                  - generic [ref=e317]:
+                    - generic [ref=e318]: Regular price
+                    - generic [ref=e319]: $68
+              - link "Hemp Cotton Relaxed Tee Regular price $58" [ref=e321] [cursor=pointer]:
+                - /url: /products/relaxed-hemp-cotton-tee-21
+                - generic [ref=e324]:
+                  - paragraph [ref=e325]: Hemp Cotton Relaxed Tee
+                  - generic [ref=e326]:
+                    - generic [ref=e327]: Regular price
+                    - generic [ref=e328]: $58
+              - link "Oversized Hemp Graphic Tee Oversized Hemp Graphic Tee Regular price $58" [ref=e330] [cursor=pointer]:
+                - /url: /products/oversized-hemp-graphic-tee
+                - img "Oversized Hemp Graphic Tee" [ref=e333]
+                - generic [ref=e334]:
+                  - paragraph [ref=e335]: Oversized Hemp Graphic Tee
+                  - generic [ref=e336]:
+                    - generic [ref=e337]: Regular price
+                    - generic [ref=e338]: $58
+              - link "Zane Eyelet Resort Shirt Regular price $148" [ref=e340] [cursor=pointer]:
+                - /url: /products/eyelet-resort-shirt
+                - generic [ref=e343]:
+                  - paragraph [ref=e344]: Zane Eyelet Resort Shirt
+                  - generic [ref=e345]:
+                    - generic [ref=e346]: Regular price
+                    - generic [ref=e347]: $148
+              - link "Cloud 9 Terry Sweatshirt Regular price $108" [ref=e349] [cursor=pointer]:
+                - /url: /products/cloud-9-terry-sweatshirt-5
+                - generic [ref=e352]:
+                  - paragraph [ref=e353]: Cloud 9 Terry Sweatshirt
+                  - generic [ref=e354]:
+                    - generic [ref=e355]: Regular price
+                    - generic [ref=e356]: $108
+              - link "Greyson Sweater Polo Regular price $128" [ref=e358] [cursor=pointer]:
+                - /url: /products/greyson-sweater-polo-9
+                - generic [ref=e361]:
+                  - paragraph [ref=e362]: Greyson Sweater Polo
+                  - generic [ref=e363]:
+                    - generic [ref=e364]: Regular price
+                    - generic [ref=e365]: $128
+              - link "Jane Relaxed Linen Shirt Jane Relaxed Linen Shirt Regular price $128" [ref=e367] [cursor=pointer]:
+                - /url: /products/jane-relaxed-linen-shirt-4
+                - img "Jane Relaxed Linen Shirt" [ref=e370]
+                - generic [ref=e371]:
+                  - paragraph [ref=e372]: Jane Relaxed Linen Shirt
+                  - generic [ref=e373]:
+                    - generic [ref=e374]: Regular price
+                    - generic [ref=e375]: $128
+              - link "Rico Terry Resort Shirt Regular price $98" [ref=e377] [cursor=pointer]:
+                - /url: /products/rico-terry-resort-shirt
+                - generic [ref=e380]:
+                  - paragraph [ref=e381]: Rico Terry Resort Shirt
+                  - generic [ref=e382]:
+                    - generic [ref=e383]: Regular price
+                    - generic [ref=e384]: $98
+              - link "Coralina Scoop Tank Regular price $68" [ref=e386] [cursor=pointer]:
+                - /url: /products/coralina-scoop-tank-1
+                - generic [ref=e389]:
+                  - paragraph [ref=e390]: Coralina Scoop Tank
+                  - generic [ref=e391]:
+                    - generic [ref=e392]: Regular price
+                    - generic [ref=e393]: $68
+            - button "Previous slide" [ref=e394] [cursor=pointer]:
+              - img [ref=e396]
+            - button "Next slide" [ref=e401] [cursor=pointer]:
+              - img [ref=e403]
+          - generic [ref=e408]:
+            - generic [ref=e409]:
+              - link "Corinne Maxi Dress Corinne Maxi Dress Regular price $138" [ref=e411] [cursor=pointer]:
+                - /url: /products/corinne-button-dress
+                - img "Corinne Maxi Dress" [ref=e414]
+                - generic [ref=e415]:
+                  - paragraph [ref=e416]: Corinne Maxi Dress
+                  - generic [ref=e417]:
+                    - generic [ref=e418]: Regular price
+                    - generic [ref=e419]: $138
+              - link "Marella Embroidered Top Marella Embroidered Top Regular price $138" [ref=e421] [cursor=pointer]:
+                - /url: /products/marella-embroidered-top
+                - img "Marella Embroidered Top" [ref=e424]
+                - generic [ref=e425]:
+                  - paragraph [ref=e426]: Marella Embroidered Top
+                  - generic [ref=e427]:
+                    - generic [ref=e428]: Regular price
+                    - generic [ref=e429]: $138
+              - link "Lucia Linen Dress Lucia Linen Dress Regular price $158" [ref=e431] [cursor=pointer]:
+                - /url: /products/luca-a-linen-dress-1
+                - img "Lucia Linen Dress" [ref=e434]
+                - generic [ref=e435]:
+                  - paragraph [ref=e436]: Lucia Linen Dress
+                  - generic [ref=e437]:
+                    - generic [ref=e438]: Regular price
+                    - generic [ref=e439]: $158
+              - link "Marella Embroidered Short Marella Embroidered Short Regular price $128" [ref=e441] [cursor=pointer]:
+                - /url: /products/marella-embroidered-short
+                - img "Marella Embroidered Short" [ref=e444]
+                - generic [ref=e445]:
+                  - paragraph [ref=e446]: Marella Embroidered Short
+                  - generic [ref=e447]:
+                    - generic [ref=e448]: Regular price
+                    - generic [ref=e449]: $128
+              - link "Camila Maxi Dress Camila Maxi Dress Regular price $158" [ref=e451] [cursor=pointer]:
+                - /url: /products/camila-maxi-dress-8
+                - img "Camila Maxi Dress" [ref=e454]
+                - generic [ref=e455]:
+                  - paragraph [ref=e456]: Camila Maxi Dress
+                  - generic [ref=e457]:
+                    - generic [ref=e458]: Regular price
+                    - generic [ref=e459]: $158
+              - link "Cora Linen Mini Dress Cora Linen Mini Dress Regular price $138" [ref=e461] [cursor=pointer]:
+                - /url: /products/cora-linen-mini-dress-2
+                - img "Cora Linen Mini Dress" [ref=e464]
+                - generic [ref=e465]:
+                  - paragraph [ref=e466]: Cora Linen Mini Dress
+                  - generic [ref=e467]:
+                    - generic [ref=e468]: Regular price
+                    - generic [ref=e469]: $138
+              - link "Anacapa Cardigan Anacapa Cardigan Regular price $138" [ref=e471] [cursor=pointer]:
+                - /url: /products/anacapa-cardigan-3
+                - img "Anacapa Cardigan" [ref=e474]
+                - generic [ref=e475]:
+                  - paragraph [ref=e476]: Anacapa Cardigan
+                  - generic [ref=e477]:
+                    - generic [ref=e478]: Regular price
+                    - generic [ref=e479]: $138
+              - link "Laguna One Piece Laguna One Piece Regular price $134" [ref=e481] [cursor=pointer]:
+                - /url: /products/ml-x-andie-laguna-one-piece-4
+                - img "Laguna One Piece" [ref=e484]
+                - generic [ref=e485]:
+                  - paragraph [ref=e486]: Laguna One Piece
+                  - generic [ref=e487]:
+                    - generic [ref=e488]: Regular price
+                    - generic [ref=e489]: $134
+              - link "Corinne Maxi Dress Corinne Maxi Dress Regular price $138" [ref=e491] [cursor=pointer]:
+                - /url: /products/corinne-button-dress
+                - img "Corinne Maxi Dress" [ref=e494]
+                - generic [ref=e495]:
+                  - paragraph [ref=e496]: Corinne Maxi Dress
+                  - generic [ref=e497]:
+                    - generic [ref=e498]: Regular price
+                    - generic [ref=e499]: $138
+              - link "Marella Embroidered Top Marella Embroidered Top Regular price $138" [ref=e501] [cursor=pointer]:
+                - /url: /products/marella-embroidered-top
+                - img "Marella Embroidered Top" [ref=e504]
+                - generic [ref=e505]:
+                  - paragraph [ref=e506]: Marella Embroidered Top
+                  - generic [ref=e507]:
+                    - generic [ref=e508]: Regular price
+                    - generic [ref=e509]: $138
+              - link "Lucia Linen Dress Lucia Linen Dress Regular price $158" [ref=e511] [cursor=pointer]:
+                - /url: /products/luca-a-linen-dress-1
+                - img "Lucia Linen Dress" [ref=e514]
+                - generic [ref=e515]:
+                  - paragraph [ref=e516]: Lucia Linen Dress
+                  - generic [ref=e517]:
+                    - generic [ref=e518]: Regular price
+                    - generic [ref=e519]: $158
+              - link "Marella Embroidered Short Marella Embroidered Short Regular price $128" [ref=e521] [cursor=pointer]:
+                - /url: /products/marella-embroidered-short
+                - img "Marella Embroidered Short" [ref=e524]
+                - generic [ref=e525]:
+                  - paragraph [ref=e526]: Marella Embroidered Short
+                  - generic [ref=e527]:
+                    - generic [ref=e528]: Regular price
+                    - generic [ref=e529]: $128
+              - link "Camila Maxi Dress Camila Maxi Dress Regular price $158" [ref=e531] [cursor=pointer]:
+                - /url: /products/camila-maxi-dress-8
+                - img "Camila Maxi Dress" [ref=e534]
+                - generic [ref=e535]:
+                  - paragraph [ref=e536]: Camila Maxi Dress
+                  - generic [ref=e537]:
+                    - generic [ref=e538]: Regular price
+                    - generic [ref=e539]: $158
+              - link "Cora Linen Mini Dress Cora Linen Mini Dress Regular price $138" [ref=e541] [cursor=pointer]:
+                - /url: /products/cora-linen-mini-dress-2
+                - img "Cora Linen Mini Dress" [ref=e544]
+                - generic [ref=e545]:
+                  - paragraph [ref=e546]: Cora Linen Mini Dress
+                  - generic [ref=e547]:
+                    - generic [ref=e548]: Regular price
+                    - generic [ref=e549]: $138
+              - link "Anacapa Cardigan Anacapa Cardigan Regular price $138" [ref=e551] [cursor=pointer]:
+                - /url: /products/anacapa-cardigan-3
+                - img "Anacapa Cardigan" [ref=e554]
+                - generic [ref=e555]:
+                  - paragraph [ref=e556]: Anacapa Cardigan
+                  - generic [ref=e557]:
+                    - generic [ref=e558]: Regular price
+                    - generic [ref=e559]: $138
+              - link "Laguna One Piece Laguna One Piece Regular price $134" [ref=e561] [cursor=pointer]:
+                - /url: /products/ml-x-andie-laguna-one-piece-4
+                - img "Laguna One Piece" [ref=e564]
+                - generic [ref=e565]:
+                  - paragraph [ref=e566]: Laguna One Piece
+                  - generic [ref=e567]:
+                    - generic [ref=e568]: Regular price
+                    - generic [ref=e569]: $134
+            - button "Previous slide" [ref=e570] [cursor=pointer]:
+              - img [ref=e572]
+            - button "Next slide" [ref=e577] [cursor=pointer]:
+              - img [ref=e579]
+          - generic [ref=e584]:
+            - generic [ref=e585]:
+              - link "Olivo Resort Sweater Regular price $148" [ref=e587] [cursor=pointer]:
+                - /url: /products/olivo-resort-sweater
+                - generic [ref=e590]:
+                  - paragraph [ref=e591]: Olivo Resort Sweater
+                  - generic [ref=e592]:
+                    - generic [ref=e593]: Regular price
+                    - generic [ref=e594]: $148
+              - link "6\" Saturday Beach Short Regular price $98" [ref=e596] [cursor=pointer]:
+                - /url: /products/saturday-beach-short-17
+                - generic [ref=e599]:
+                  - paragraph [ref=e600]: 6" Saturday Beach Short
+                  - generic [ref=e601]:
+                    - generic [ref=e602]: Regular price
+                    - generic [ref=e603]: $98
+              - link "Hemp Cotton Relaxed Tee Regular price $58" [ref=e605] [cursor=pointer]:
+                - /url: /products/relaxed-hemp-cotton-tee-20
+                - generic [ref=e608]:
+                  - paragraph [ref=e609]: Hemp Cotton Relaxed Tee
+                  - generic [ref=e610]:
+                    - generic [ref=e611]: Regular price
+                    - generic [ref=e612]: $58
+              - link "Stretch Selvage Short Sleeve Shirt Regular price $118" [ref=e614] [cursor=pointer]:
+                - /url: /products/classic-stretch-selvage-shirt-57
+                - generic [ref=e617]:
+                  - paragraph [ref=e618]: Stretch Selvage Short Sleeve Shirt
+                  - generic [ref=e619]:
+                    - generic [ref=e620]: Regular price
+                    - generic [ref=e621]: $118
+              - link "5\" Vintage Swim Trunk Regular price $94" [ref=e623] [cursor=pointer]:
+                - /url: /products/tailored-swim-trunk-6
+                - generic [ref=e626]:
+                  - paragraph [ref=e627]: 5" Vintage Swim Trunk
+                  - generic [ref=e628]:
+                    - generic [ref=e629]: Regular price
+                    - generic [ref=e630]: $94
+              - link "Pablo Tencel Linen Resort Shirt Regular price $128" [ref=e632] [cursor=pointer]:
+                - /url: /products/pablo-tencel-linen-resort-shirt-1
+                - generic [ref=e635]:
+                  - paragraph [ref=e636]: Pablo Tencel Linen Resort Shirt
+                  - generic [ref=e637]:
+                    - generic [ref=e638]: Regular price
+                    - generic [ref=e639]: $128
+              - link "Sergio Hemp Overshirt Regular price $168" [ref=e641] [cursor=pointer]:
+                - /url: /products/sergio-hemp-overshirt
+                - generic [ref=e644]:
+                  - paragraph [ref=e645]: Sergio Hemp Overshirt
+                  - generic [ref=e646]:
+                    - generic [ref=e647]: Regular price
+                    - generic [ref=e648]: $168
+              - link "Saturday Hemp Beach Pant - Slim Straight Regular price $128" [ref=e650] [cursor=pointer]:
+                - /url: /products/saturday-hemp-beach-pant-slim-straight
+                - generic [ref=e653]:
+                  - paragraph [ref=e654]: Saturday Hemp Beach Pant - Slim Straight
+                  - generic [ref=e655]:
+                    - generic [ref=e656]: Regular price
+                    - generic [ref=e657]: $128
+              - link "Olivo Resort Sweater Regular price $148" [ref=e659] [cursor=pointer]:
+                - /url: /products/olivo-resort-sweater
+                - generic [ref=e662]:
+                  - paragraph [ref=e663]: Olivo Resort Sweater
+                  - generic [ref=e664]:
+                    - generic [ref=e665]: Regular price
+                    - generic [ref=e666]: $148
+              - link "6\" Saturday Beach Short Regular price $98" [ref=e668] [cursor=pointer]:
+                - /url: /products/saturday-beach-short-17
+                - generic [ref=e671]:
+                  - paragraph [ref=e672]: 6" Saturday Beach Short
+                  - generic [ref=e673]:
+                    - generic [ref=e674]: Regular price
+                    - generic [ref=e675]: $98
+              - link "Hemp Cotton Relaxed Tee Regular price $58" [ref=e677] [cursor=pointer]:
+                - /url: /products/relaxed-hemp-cotton-tee-20
+                - generic [ref=e680]:
+                  - paragraph [ref=e681]: Hemp Cotton Relaxed Tee
+                  - generic [ref=e682]:
+                    - generic [ref=e683]: Regular price
+                    - generic [ref=e684]: $58
+              - link "Stretch Selvage Short Sleeve Shirt Regular price $118" [ref=e686] [cursor=pointer]:
+                - /url: /products/classic-stretch-selvage-shirt-57
+                - generic [ref=e689]:
+                  - paragraph [ref=e690]: Stretch Selvage Short Sleeve Shirt
+                  - generic [ref=e691]:
+                    - generic [ref=e692]: Regular price
+                    - generic [ref=e693]: $118
+              - link "5\" Vintage Swim Trunk Regular price $94" [ref=e695] [cursor=pointer]:
+                - /url: /products/tailored-swim-trunk-6
+                - generic [ref=e698]:
+                  - paragraph [ref=e699]: 5" Vintage Swim Trunk
+                  - generic [ref=e700]:
+                    - generic [ref=e701]: Regular price
+                    - generic [ref=e702]: $94
+              - link "Pablo Tencel Linen Resort Shirt Regular price $128" [ref=e704] [cursor=pointer]:
+                - /url: /products/pablo-tencel-linen-resort-shirt-1
+                - generic [ref=e707]:
+                  - paragraph [ref=e708]: Pablo Tencel Linen Resort Shirt
+                  - generic [ref=e709]:
+                    - generic [ref=e710]: Regular price
+                    - generic [ref=e711]: $128
+              - link "Sergio Hemp Overshirt Regular price $168" [ref=e713] [cursor=pointer]:
+                - /url: /products/sergio-hemp-overshirt
+                - generic [ref=e716]:
+                  - paragraph [ref=e717]: Sergio Hemp Overshirt
+                  - generic [ref=e718]:
+                    - generic [ref=e719]: Regular price
+                    - generic [ref=e720]: $168
+              - link "Saturday Hemp Beach Pant - Slim Straight Regular price $128" [ref=e722] [cursor=pointer]:
+                - /url: /products/saturday-hemp-beach-pant-slim-straight
+                - generic [ref=e725]:
+                  - paragraph [ref=e726]: Saturday Hemp Beach Pant - Slim Straight
+                  - generic [ref=e727]:
+                    - generic [ref=e728]: Regular price
+                    - generic [ref=e729]: $128
+            - button "Previous slide" [ref=e730] [cursor=pointer]:
+              - img [ref=e732]
+            - button "Next slide" [ref=e737] [cursor=pointer]:
+              - img [ref=e739]
+    - generic [ref=e750]:
+      - generic [ref=e756]:
+        - heading "The Espresso Edit" [level=2] [ref=e757]
+        - paragraph [ref=e758]: The perfect pick-me-up for your summer wardrobe.
+        - link "SHOP IT" [ref=e759] [cursor=pointer]:
+          - /url: https://www.marinelayer.com/pages/the-espresso-edit
+      - button "Pause video" [ref=e765] [cursor=pointer]:
+        - img [ref=e766]
+    - generic [ref=e776]:
+      - heading [level=2] [ref=e777]
+      - link "View all" [ref=e778] [cursor=pointer]:
+        - /url: https://www.marinelayer.com/pages/the-espresso-edit
+    - generic [ref=e786]:
+      - heading "The Hemp Shop" [level=2] [ref=e787]
+      - paragraph [ref=e788]: Our most breathable styles to beat the summer heat.
+      - link "Shop It" [ref=e789] [cursor=pointer]:
+        - /url: https://www.marinelayer.com/collections/the-hemp-shop-2
+    - generic [ref=e799]:
+      - generic [ref=e800]:
+        - heading [level=2] [ref=e801]
+        - link "View all" [ref=e802] [cursor=pointer]:
+          - /url: https://www.marinelayer.com/collections/the-hemp-shop-2
+      - listitem [ref=e803] [cursor=pointer]:
+        - button "Show More Swatch" [ref=e804]:
+          - img [ref=e805]
+      - listitem [ref=e809] [cursor=pointer]:
+        - button "Show More Swatch" [ref=e810]:
+          - img [ref=e811]
+      - listitem [ref=e815] [cursor=pointer]:
+        - button "Show More Swatch" [ref=e816]:
+          - img [ref=e817]
+    - link "See the Story" [ref=e823] [cursor=pointer]:
+      - /url: /pages/formentera-zine
+      - generic [ref=e830]: See the Story
+    - generic [ref=e836]: The latest from @marinelayer
+  - contentinfo [ref=e838]:
+    - img [ref=e840]
+    - generic [ref=e844]:
+      - generic [ref=e845]:
+        - generic [ref=e846]:
+          - generic [ref=e847]:
+            - heading "ML Stuff" [level=2] [ref=e848]
+            - heading "About Us" [level=3] [ref=e849]:
+              - link "About Us" [ref=e850] [cursor=pointer]:
+                - /url: https://www.marinelayer.com/pages/about-us
+            - heading "Our Stores" [level=3] [ref=e851]:
+              - link "Our Stores" [ref=e852] [cursor=pointer]:
+                - /url: https://www.marinelayer.com/pages/stores
+            - heading "Sustainability" [level=3] [ref=e853]:
+              - link "Sustainability" [ref=e854] [cursor=pointer]:
+                - /url: https://www.marinelayer.com/pages/impact-report?view=impact-report
+            - heading "Corporate Apparel" [level=3] [ref=e855]:
+              - link "Corporate Apparel" [ref=e856] [cursor=pointer]:
+                - /url: https://www.marinelayer.com/pages/marine-layer-corporate-apparel
+            - heading "Jobs" [level=3] [ref=e857]:
+              - link "Jobs" [ref=e858] [cursor=pointer]:
+                - /url: https://www.marinelayer.com/pages/our-team?view=careers
+          - generic [ref=e859]:
+            - heading "FYI" [level=2] [ref=e860]
+            - heading "Useful Info" [level=3] [ref=e861]:
+              - link "Useful Info" [ref=e862] [cursor=pointer]:
+                - /url: https://www.marinelayer.com/pages/useful-info
+            - heading "Contact Us" [level=3] [ref=e863]:
+              - link "Contact Us" [ref=e864] [cursor=pointer]:
+                - /url: https://www.marinelayer.com/pages/contact
+            - heading "Track Your Package" [level=3] [ref=e865]:
+              - link "Track Your Package" [ref=e866] [cursor=pointer]:
+                - /url: /pages/track-your-package
+            - heading "Shipping Info" [level=3] [ref=e867]:
+              - link "Shipping Info" [ref=e868] [cursor=pointer]:
+                - /url: /pages/shipping-info
+            - heading "Size Charts" [level=3] [ref=e869]:
+              - link "Size Charts" [ref=e870] [cursor=pointer]:
+                - /url: /pages/size-charts
+            - heading "Returns & Exchanges" [level=3] [ref=e871]:
+              - link "Returns & Exchanges" [ref=e872] [cursor=pointer]:
+                - /url: https://www.marinelayer.com/pages/returns
+            - heading "Gift Cards" [level=3] [ref=e873]:
+              - link "Gift Cards" [ref=e874] [cursor=pointer]:
+                - /url: /pages/useful-info-gift-cards
+            - heading "Catalog Unsubscribe" [level=3] [ref=e875]:
+              - link "Catalog Unsubscribe" [ref=e876] [cursor=pointer]:
+                - /url: https://www.marinelayer.com/pages/unsubscribe
+            - heading "Login" [level=3] [ref=e877]:
+              - link "Login" [ref=e878] [cursor=pointer]:
+                - /url: https://shopify.com/8319103/account
+          - generic [ref=e879]:
+            - heading "Stay Connected" [level=2] [ref=e880]
+            - list [ref=e881]:
+              - listitem [ref=e882]:
+                - link "Facebook" [ref=e883] [cursor=pointer]:
+                  - /url: https://www.facebook.com/marinelayer/
+                  - img [ref=e884]
+                  - generic [ref=e887]: Facebook
+              - listitem [ref=e888]:
+                - link "Instagram" [ref=e889] [cursor=pointer]:
+                  - /url: https://www.instagram.com/marinelayer/
+                  - img [ref=e890]
+                  - generic [ref=e895]: Instagram
+              - listitem [ref=e896]:
+                - link "TikTok" [ref=e897] [cursor=pointer]:
+                  - /url: https://www.tiktok.com/@marinelayer
+                  - img [ref=e898]
+                  - generic [ref=e900]: TikTok
+        - generic [ref=e904]:
+          - heading "Stay Connected" [level=2] [ref=e905]
+          - paragraph [ref=e906]: Sign up for our email list.
+          - generic [ref=e909]:
+            - generic [ref=e910]:
+              - textbox "Email" [ref=e911]
+              - generic [ref=e912]: Email
+            - generic [ref=e913]:
+              - checkbox "Wanna go analog? Get the catalog too." [ref=e914]
+              - generic [ref=e915]: Wanna go analog? Get the catalog too.
+            - button "Sign me up" [ref=e917] [cursor=pointer]
+      - generic [ref=e922]:
+        - generic [ref=e923]:
+          - link "Privacy Policy" [ref=e924] [cursor=pointer]:
+            - /url: https://www.marinelayer.com/pages/privacy-policy
+          - link "Accessibility Statement" [ref=e925] [cursor=pointer]:
+            - /url: https://www.marinelayer.com/pages/accessibility-statement
+          - link "Do Not Sell My Information" [ref=e926] [cursor=pointer]:
+            - /url: https://www.marinelayer.com/pages/ccpa-privacy-request-form
+          - link "Privacy Settings" [ref=e927] [cursor=pointer]:
+            - /url: "#"
+        - paragraph [ref=e929]: © 2026 Marine Layer. All Rights Reserved.
+  - img [ref=e930]
+  - generic [ref=e932]:
+    - button "New Here? Take 15% Off" [ref=e933] [cursor=pointer]:
+      - paragraph [ref=e937]:
+        - generic [ref=e938]: New Here? Take 15% Off
+    - button "Close teaser" [ref=e939] [cursor=pointer]:
+      - img [ref=e940]
