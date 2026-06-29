@@ -161,64 +161,282 @@ const marketingPanels = [
   },
 ]
 
+const graphicDesignFilters = ['Todo', 'Identidad', 'Editorial', 'Campana', 'Textura']
+
+const graphicDesignPieces = [
+  {
+    id: 'GD-01',
+    title: 'Manifiesto Koust',
+    category: 'Identidad',
+    format: 'Poster system',
+    size: 'feature',
+    color: '#ffed00',
+    src: publicAsset('koust/Propuesta-Koust-2.webp'),
+    alt: 'Poster editorial Just Create de Koust',
+  },
+  {
+    id: 'GD-02',
+    title: 'Calle / Grafiti',
+    category: 'Campana',
+    format: 'Outdoor visual',
+    size: 'wide',
+    color: '#00c2ff',
+    src: publicAsset('koust/Grafiti1.webp'),
+    alt: 'Modelo con camiseta Koust frente a grafiti',
+  },
+  {
+    id: 'GD-03',
+    title: 'Lookbook negro',
+    category: 'Editorial',
+    format: 'Lookbook',
+    size: 'tall',
+    color: '#ff4d8d',
+    src: publicAsset('koust/3(4).webp'),
+    alt: 'Tres modelos con camisetas negras de Koust',
+  },
+  {
+    id: 'GD-04',
+    title: 'Blanco urbano',
+    category: 'Campana',
+    format: 'Campaign still',
+    size: 'large',
+    color: '#b9ff3c',
+    src: publicAsset('koust/Grafiti7.webp'),
+    alt: 'Editorial urbana con camisetas blancas de Koust',
+  },
+  {
+    id: 'GD-05',
+    title: 'Sistema frontal',
+    category: 'Identidad',
+    format: 'Brand frame',
+    size: 'medium',
+    color: '#ffffff',
+    src: publicAsset('koust/1(5).webp'),
+    alt: 'Imagen frontal de prenda Koust',
+  },
+  {
+    id: 'GD-06',
+    title: 'Trama de marca',
+    category: 'Textura',
+    format: 'Texture crop',
+    size: 'medium',
+    color: '#ff6b35',
+    src: publicAsset('koust/Grafiti5.webp'),
+    alt: 'Detalle visual de grafiti para Koust',
+  },
+  {
+    id: 'GD-07',
+    title: 'Drop visual',
+    category: 'Editorial',
+    format: 'Drop still',
+    size: 'wide',
+    color: '#7cffd5',
+    src: publicAsset('koust/1(6).webp'),
+    alt: 'Pieza editorial de camiseta Koust',
+  },
+  {
+    id: 'GD-08',
+    title: 'Stencil amarillo',
+    category: 'Textura',
+    format: 'Poster crop',
+    size: 'tall',
+    color: '#ffe45e',
+    src: publicAsset('koust/Grafiti3.webp'),
+    alt: 'Composicion grafica de Koust sobre pared',
+  },
+  {
+    id: 'GD-09',
+    title: 'Tres cuerpos',
+    category: 'Editorial',
+    format: 'Composition',
+    size: 'large',
+    color: '#bfa3ff',
+    src: publicAsset('koust/3(5).webp'),
+    alt: 'Composicion editorial con tres modelos',
+  },
+  {
+    id: 'GD-10',
+    title: 'Direccion street',
+    category: 'Campana',
+    format: 'Campaign set',
+    size: 'medium',
+    color: '#ff5f57',
+    src: publicAsset('koust/Grafiti10.webp'),
+    alt: 'Pieza de campana urbana Koust',
+  },
+  {
+    id: 'GD-11',
+    title: 'Modulo negro',
+    category: 'Identidad',
+    format: 'Identity still',
+    size: 'wide',
+    color: '#f5f0df',
+    src: publicAsset('koust/4(4).webp'),
+    alt: 'Modelo con camiseta negra de Koust',
+  },
+  {
+    id: 'GD-12',
+    title: 'Ruido controlado',
+    category: 'Textura',
+    format: 'Graphic layer',
+    size: 'medium',
+    color: '#53a8ff',
+    src: publicAsset('koust/Grafiti8.webp'),
+    alt: 'Detalle de pared grafica para pieza Koust',
+  },
+  {
+    id: 'GD-13',
+    title: 'Bloque de equipo',
+    category: 'Editorial',
+    format: 'Lookbook',
+    size: 'large',
+    color: '#ffed00',
+    src: publicAsset('koust/2(5).webp'),
+    alt: 'Grupo de modelos en lookbook Koust',
+  },
+  {
+    id: 'GD-14',
+    title: 'Marca en pared',
+    category: 'Campana',
+    format: 'Wall crop',
+    size: 'tall',
+    color: '#9cff6a',
+    src: publicAsset('koust/Grafiti2.webp'),
+    alt: 'Pared de grafiti con direccion visual Koust',
+  },
+  {
+    id: 'GD-15',
+    title: 'Corte editorial',
+    category: 'Editorial',
+    format: 'Magazine crop',
+    size: 'medium',
+    color: '#ff9fda',
+    src: publicAsset('koust/3(6).webp'),
+    alt: 'Recorte editorial de tres prendas Koust',
+  },
+  {
+    id: 'GD-16',
+    title: 'Pieza lateral',
+    category: 'Identidad',
+    format: 'Product still',
+    size: 'wide',
+    color: '#7cf7ff',
+    src: publicAsset('koust/4(5).webp'),
+    alt: 'Pieza lateral de lookbook Koust',
+  },
+  {
+    id: 'GD-17',
+    title: 'Pulso graffiti',
+    category: 'Textura',
+    format: 'Motion still',
+    size: 'medium',
+    color: '#ffed00',
+    src: publicAsset('koust/Grafiti9.webp'),
+    alt: 'Textura urbana para campana Koust',
+  },
+  {
+    id: 'GD-18',
+    title: 'Cierre de serie',
+    category: 'Campana',
+    format: 'Campaign close',
+    size: 'feature',
+    color: '#ffffff',
+    src: publicAsset('koust/6(4).webp'),
+    alt: 'Cierre visual de la serie Koust',
+  },
+]
+
+const videoProjects = [
+  {
+    id: '01',
+    title: 'RTO final',
+    type: 'Reel master',
+    duration: '00:18',
+    rhythm: 'Hook / Beat / Cierre',
+    src: publicAsset('RTO-finalizado.mp4'),
+    poster: publicAsset('koust/Propuesta-Koust-2.webp'),
+    copy: 'Un reel protagonista tratado como pieza de portfolio: vertical, directo y con jerarquia para que el montaje se lea sin depender de una portada horizontal.',
+  },
+  {
+    id: '02',
+    title: 'Koust loop',
+    type: 'Loop social',
+    duration: '00:09',
+    rhythm: 'Loop / Textura / Drop',
+    src: publicAsset('koust-hover.mp4'),
+    poster: publicAsset('koust/Grafiti7.webp'),
+    copy: 'Un loop corto presentado como pieza vertical de redes, con marco de telefono, textura y lectura rapida.',
+  },
+  {
+    id: '03',
+    title: 'Alt cut',
+    type: 'Slot vertical',
+    duration: '00:12',
+    rhythm: 'Recorte / Reencuadre / Pulso',
+    src: publicAsset('RTO-finalizado.mp4'),
+    poster: publicAsset('koust/Grafiti1.webp'),
+    copy: 'Un tercer hueco preparado para el siguiente reel real, manteniendo la misma estructura de portada vertical y sistema de seleccion.',
+  },
+]
+
 const koustSections = [
   {
     kicker: 'Identidad',
     title: 'Negro base, amarillo golpe.',
     text: 'Koust puede presentarse con una entrada directa: marca grande, mucho contraste y mensajes cortos para que cada bloque se sienta como una pieza de campana.',
-    image: publicAsset('koust/Propuesta-Koust-2.png'),
+    image: publicAsset('koust/Propuesta-Koust-2.webp'),
     alt: 'Propuesta editorial Just Create de Koust',
   },
   {
     kicker: 'Contenido',
     title: 'Espacio para producto, texto e imagen.',
     text: 'La estructura deja hueco para editoriales, renders, fotos de producto o manifiesto de marca sin romper el ritmo de la ventana.',
-    image: publicAsset('koust/3(4).png'),
+    image: publicAsset('koust/3(4).webp'),
     alt: 'Tres modelos con camisetas negras de Koust',
   },
   {
     kicker: 'Sistema',
     title: 'Secciones con entrada suave.',
     text: 'Cada bloque entra con transicion, contraste alto y composiciones alternas para que el scroll no parezca una pagina estatica.',
-    image: publicAsset('koust/Grafiti7.png'),
+    image: publicAsset('koust/Grafiti7.webp'),
     alt: 'Editorial con camisetas blancas de Koust',
   },
 ]
 
 const koustGalleryImages = [
-  '1(4).png',
-  'Grafiti1.png',
-  '3(4).png',
-  '2(7).png',
-  '2(4).png',
-  'Grafiti7.png',
-  '1(5).png',
-  'Grafiti5.png',
-  '1(6).png',
-  'Grafiti3.png',
-  '3(5).png',
-  '3(7).png',
-  '4(6).png',
-  'Grafiti10.png',
-  '4(4).png',
-  'Grafiti8.png',
-  '2(5).png',
-  'Grafiti2.png',
-  '3(6).png',
-  'Grafiti6.png',
-  '4(5).png',
-  'Grafiti9.png',
-  '2(6).png',
-  'Grafiti4.png',
-  '4(7).png',
-  '5(6).png',
-  '5(4).png',
-  'Grafiti7.png',
-  '5(5).png',
-  'Grafiti1.png',
-  '6(3).png',
-  '6(4).png',
-  '1(7).png',
+  '1(4).webp',
+  'Grafiti1.webp',
+  '3(4).webp',
+  '2(7).webp',
+  '2(4).webp',
+  'Grafiti7.webp',
+  '1(5).webp',
+  'Grafiti5.webp',
+  '1(6).webp',
+  'Grafiti3.webp',
+  '3(5).webp',
+  '3(7).webp',
+  '4(6).webp',
+  'Grafiti10.webp',
+  '4(4).webp',
+  'Grafiti8.webp',
+  '2(5).webp',
+  'Grafiti2.webp',
+  '3(6).webp',
+  'Grafiti6.webp',
+  '4(5).webp',
+  'Grafiti9.webp',
+  '2(6).webp',
+  'Grafiti4.webp',
+  '4(7).webp',
+  '5(6).webp',
+  '5(4).webp',
+  'Grafiti7.webp',
+  '5(5).webp',
+  'Grafiti1.webp',
+  '6(3).webp',
+  '6(4).webp',
+  '1(7).webp',
 ]
 
 const koustGalleryItems = koustGalleryImages.map((image) => ({
@@ -256,6 +474,7 @@ const ideaWords = ideaText.split(' ')
 
 function IdeaReveal() {
   const [ideaProgress, setIdeaProgress] = useState(0)
+  const [hasEntered, setHasEntered] = useState(false)
   const sectionRef = useRef(null)
   const frameRef = useRef(null)
 
@@ -289,8 +508,30 @@ function IdeaReveal() {
     }
   }, [])
 
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return undefined
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasEntered(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.28 },
+    )
+
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="idea-reveal" ref={sectionRef} aria-label="Frase principal">
+    <section
+      className={`idea-reveal${hasEntered ? ' is-entered' : ''}`}
+      ref={sectionRef}
+      aria-label="Frase principal"
+    >
       <div className="idea-sticky">
         <p className="idea-line" aria-label={ideaText}>
           {ideaWords.map((word, index) => {
@@ -512,6 +753,437 @@ function MarketingGallery({ isOpen, onClose }) {
             </article>
           ))}
         </div>
+      </div>
+    </div>
+  )
+}
+
+function GraphicDesignGallery({ isOpen, onClose }) {
+  const [activeFilter, setActiveFilter] = useState('Todo')
+  const [spotlightIndex, setSpotlightIndex] = useState(0)
+  const [zoomedPiece, setZoomedPiece] = useState(null)
+  const [isClosing, setIsClosing] = useState(false)
+  const closeTimerRef = useRef(null)
+  const cursorRef = useRef(null)
+  const visiblePieces =
+    activeFilter === 'Todo'
+      ? graphicDesignPieces
+      : graphicDesignPieces.filter((piece) => piece.category === activeFilter)
+  const spotlightPiece = graphicDesignPieces[spotlightIndex % graphicDesignPieces.length]
+
+  const closeGallery = useCallback(() => {
+    if (isClosing) return
+
+    setIsClosing(true)
+    closeTimerRef.current = window.setTimeout(() => {
+      setIsClosing(false)
+      setZoomedPiece(null)
+      onClose()
+    }, 280)
+  }, [isClosing, onClose])
+
+  const moveCursor = useCallback((event) => {
+    if (event.pointerType !== 'mouse' || !cursorRef.current) return
+
+    cursorRef.current.dataset.visible = 'true'
+    cursorRef.current.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`
+  }, [])
+
+  const hideCursor = useCallback(() => {
+    if (cursorRef.current) cursorRef.current.dataset.visible = 'false'
+  }, [])
+
+  useEffect(() => {
+    if (isOpen) setIsClosing(false)
+
+    return () => {
+      window.clearTimeout(closeTimerRef.current)
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const timer = window.setInterval(() => {
+      setSpotlightIndex((index) => (index + 1) % graphicDesignPieces.length)
+    }, 3200)
+
+    return () => window.clearInterval(timer)
+  }, [isOpen])
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const previousOverflow = document.body.style.overflow
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape' && zoomedPiece) {
+        setZoomedPiece(null)
+        return
+      }
+
+      if (event.key === 'Escape') closeGallery()
+      if (event.key === 'ArrowRight') {
+        setSpotlightIndex((index) => (index + 1) % graphicDesignPieces.length)
+      }
+      if (event.key === 'ArrowLeft') {
+        setSpotlightIndex(
+          (index) => (index + graphicDesignPieces.length - 1) % graphicDesignPieces.length,
+        )
+      }
+    }
+
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isOpen, closeGallery, zoomedPiece])
+
+  if (!isOpen) return null
+
+  return (
+    <div className={`graphic-design-shell${isClosing ? ' is-closing' : ''}`}>
+      <div
+        className="graphic-design-scroll"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Galeria de diseno grafico"
+      >
+        <div className="graphic-design-actions">
+          <button className="graphic-design-back" type="button" onClick={closeGallery}>
+            <span aria-hidden="true">←</span>
+            Atrás
+          </button>
+          <span className="graphic-design-counter">
+            {visiblePieces.length.toString().padStart(2, '0')} piezas
+          </span>
+        </div>
+
+        <section className="graphic-design-hero" aria-label="Archivo de diseno grafico">
+          <div className="graphic-design-orbit" aria-hidden="true">
+            {graphicDesignPieces.slice(1, 8).map((piece, index) => (
+              <img
+                src={piece.src}
+                alt=""
+                loading="eager"
+                style={{ '--orbit-index': index }}
+                key={piece.id}
+              />
+            ))}
+          </div>
+
+          <div className="graphic-design-hero-copy">
+            <p>Archivo visual / 2026</p>
+            <h2>
+              <span>Diseño</span>
+              <span>gráfico</span>
+            </h2>
+            <div className="graphic-design-signals" aria-label="Disciplinas">
+              <span>Branding</span>
+              <span>Editorial</span>
+              <span>Campaña</span>
+              <span>Textura</span>
+            </div>
+          </div>
+
+          <button
+            className="graphic-design-feature"
+            type="button"
+            aria-label={`Ampliar ${spotlightPiece.title}`}
+            onClick={() => setZoomedPiece(spotlightPiece)}
+          >
+            <img src={spotlightPiece.src} alt={spotlightPiece.alt} key={spotlightPiece.id} />
+            <span className="graphic-design-feature-meta">
+              <small>
+                {spotlightPiece.id} / {spotlightPiece.category}
+              </small>
+              <strong>{spotlightPiece.title}</strong>
+            </span>
+          </button>
+
+          <div className="graphic-design-ticker" aria-hidden="true">
+            <span>Composition / Type / Layout / Motion / Identity / Print / </span>
+            <span>Composition / Type / Layout / Motion / Identity / Print / </span>
+          </div>
+        </section>
+
+        <section className="graphic-design-filterbar" aria-label="Filtros de galeria">
+          <span>Archivo</span>
+          <div className="graphic-design-filters">
+            {graphicDesignFilters.map((filter) => (
+              <button
+                type="button"
+                data-active={filter === activeFilter}
+                onClick={() => setActiveFilter(filter)}
+                key={filter}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section
+          className="graphic-design-wall"
+          aria-label="Piezas de diseno grafico"
+          onPointerMove={moveCursor}
+          onPointerLeave={hideCursor}
+        >
+          {visiblePieces.map((piece, index) => (
+            <button
+              className={`graphic-design-piece graphic-design-piece-${piece.size}`}
+              type="button"
+              aria-label={`Ampliar ${piece.title}`}
+              style={{ '--piece-index': index, '--piece-color': piece.color }}
+              onClick={() => setZoomedPiece(piece)}
+              key={piece.id}
+            >
+              <img src={piece.src} alt={piece.alt} loading={index < 6 ? 'eager' : 'lazy'} />
+              <span className="graphic-design-piece-tag">{piece.format}</span>
+              <span className="graphic-design-piece-copy">
+                <strong>{piece.title}</strong>
+                <small>
+                  {piece.id} / {piece.category}
+                </small>
+              </span>
+            </button>
+          ))}
+          <span className="graphic-design-cursor" data-visible="false" ref={cursorRef}>
+            Ver
+          </span>
+        </section>
+
+        <section className="graphic-design-closeout" aria-label="Direccion visual">
+          <p>
+            Un archivo visual con ritmo de portfolio: piezas grandes, recortes inesperados y una
+            lectura pensada para que cada imagen funcione como diseño, no solo como fotografia.
+          </p>
+        </section>
+      </div>
+
+      {zoomedPiece ? (
+        <button
+          className="graphic-design-zoom"
+          type="button"
+          aria-label="Cerrar imagen ampliada"
+          onClick={() => setZoomedPiece(null)}
+        >
+          <img src={zoomedPiece.src} alt={zoomedPiece.alt} />
+          <span>
+            <small>{zoomedPiece.id}</small>
+            {zoomedPiece.title}
+          </span>
+        </button>
+      ) : null}
+    </div>
+  )
+}
+
+function VideoEditingShowcase({ isOpen, onClose }) {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [isClosing, setIsClosing] = useState(false)
+  const closeTimerRef = useRef(null)
+  const phoneVideoRef = useRef(null)
+  const activeProject = videoProjects[activeIndex] ?? videoProjects[0]
+
+  const closeShowcase = useCallback(() => {
+    if (isClosing) return
+
+    setIsClosing(true)
+    closeTimerRef.current = window.setTimeout(() => {
+      setIsClosing(false)
+      onClose()
+    }, 260)
+  }, [isClosing, onClose])
+
+  useEffect(() => {
+    if (isOpen) setIsClosing(false)
+
+    return () => {
+      window.clearTimeout(closeTimerRef.current)
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const frame = window.requestAnimationFrame(() => {
+      phoneVideoRef.current?.play?.().catch(() => {})
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [isOpen, activeIndex])
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const previousOverflow = document.body.style.overflow
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') closeShowcase()
+      if (event.key === 'ArrowRight') {
+        setActiveIndex((index) => (index + 1) % videoProjects.length)
+      }
+      if (event.key === 'ArrowLeft') {
+        setActiveIndex((index) => (index + videoProjects.length - 1) % videoProjects.length)
+      }
+    }
+
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isOpen, closeShowcase])
+
+  if (!isOpen) return null
+
+  return (
+    <div className={`video-edit-shell${isClosing ? ' is-closing' : ''}`}>
+      <div
+        className="video-edit-scroll"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Edicion de video"
+      >
+        <div className="video-edit-actions">
+          <button className="video-edit-back" type="button" onClick={closeShowcase}>
+            <span aria-hidden="true">←</span>
+            Atras
+          </button>
+          <span className="video-edit-counter">
+            {activeProject.id}/{videoProjects.length.toString().padStart(2, '0')}
+          </span>
+        </div>
+
+        <section className="video-edit-hero" aria-label="Showreel de edicion de video vertical">
+          <div className="video-edit-rhythm-map" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="video-edit-hero-copy">
+            <p>{activeProject.type}</p>
+            <h2>
+              Reels{' '}
+              <span>verticales</span>
+            </h2>
+            <div className="video-edit-hero-meta">
+              <span>{activeProject.duration}</span>
+              <span>{activeProject.rhythm}</span>
+            </div>
+          </div>
+
+          <div className="video-edit-reel-stage">
+            <div className="video-edit-reel-stack" aria-hidden="true">
+              {videoProjects.map((project, index) => (
+                <span
+                  className="video-edit-reel-ghost"
+                  data-active={index === activeIndex}
+                  style={{ '--reel-index': index }}
+                  key={project.id}
+                >
+                  <img src={project.poster} alt="" loading="eager" />
+                </span>
+              ))}
+            </div>
+
+            <div className="video-edit-phone">
+              <span className="video-edit-phone-bar" aria-hidden="true">
+                <span />
+              </span>
+              <video
+                className="video-edit-phone-video"
+                ref={phoneVideoRef}
+                key={`${activeProject.id}-${activeProject.src}`}
+                src={activeProject.src}
+                poster={activeProject.poster}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                onCanPlay={(event) => event.currentTarget.play().catch(() => {})}
+                onLoadedMetadata={(event) => event.currentTarget.play().catch(() => {})}
+              />
+              <span className="video-edit-phone-caption">
+                <small>{activeProject.id}</small>
+                {activeProject.title}
+              </span>
+            </div>
+
+            <div className="video-edit-selector" aria-label="Seleccion de piezas de video">
+              {videoProjects.map((project, index) => (
+                <button
+                  className="video-edit-selector-item"
+                  type="button"
+                  aria-pressed={index === activeIndex}
+                  data-active={index === activeIndex}
+                  onClick={() => setActiveIndex(index)}
+                  key={project.id}
+                >
+                  <span>{project.id}</span>
+                  <strong>{project.title}</strong>
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="video-edit-statement">
+          <p>
+            Portada pensada para reels: formatos 9:16, marcos de telefono, lectura editorial y un
+            solo clip activo para mantener la experiencia rapida.
+          </p>
+          <div className="video-edit-ticker" aria-hidden="true">
+            <span>Cut / Rhythm / Mask / Motion / Color / Editorial / </span>
+            <span>Cut / Rhythm / Mask / Motion / Color / Editorial / </span>
+          </div>
+        </section>
+
+        <section className="video-edit-board" aria-label="Piezas destacadas de edicion">
+          {videoProjects.map((project, index) => (
+            <article
+              className="video-edit-card"
+              data-active={index === activeIndex}
+              key={project.id}
+            >
+              <button
+                className="video-edit-card-media"
+                type="button"
+                aria-label={`Ver ${project.title}`}
+                onClick={() => setActiveIndex(index)}
+              >
+                <video
+                  src={project.src}
+                  poster={project.poster}
+                  muted
+                  playsInline
+                  preload="metadata"
+                />
+                <span className="video-edit-card-index">{project.id}</span>
+              </button>
+              <div className="video-edit-card-copy">
+                <span>{project.type}</span>
+                <h3>{project.title}</h3>
+                <p>{project.copy}</p>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <section className="video-edit-timeline" aria-label="Lenguaje de montaje">
+          {['Open', 'Cut', 'Mask', 'Pulse', 'End'].map((step, index) => (
+            <span style={{ '--timeline-index': index }} key={step}>
+              {step}
+            </span>
+          ))}
+        </section>
       </div>
     </div>
   )
@@ -875,7 +1547,16 @@ function PersonalProject({ isOpen, onClose }) {
   )
 }
 
-function WorkStory({ isMarketingOpen, isPersonalOpen, onOpenMarketing, onOpenPersonal }) {
+function WorkStory({
+  isGraphicOpen,
+  isMarketingOpen,
+  isPersonalOpen,
+  isVideoOpen,
+  onOpenGraphic,
+  onOpenMarketing,
+  onOpenPersonal,
+  onOpenVideo,
+}) {
   const [activeIndex, setActiveIndex] = useState(0)
   const sectionRef = useRef(null)
   const activeIndexRef = useRef(0)
@@ -910,7 +1591,9 @@ function WorkStory({ isMarketingOpen, isPersonalOpen, onOpenMarketing, onOpenPer
 
   useEffect(() => {
     const section = sectionRef.current
-    if (!section || isMarketingOpen || isPersonalOpen) return undefined
+    if (!section || isGraphicOpen || isMarketingOpen || isPersonalOpen || isVideoOpen) {
+      return undefined
+    }
 
     const isInsideWork = () => {
       const rect = section.getBoundingClientRect()
@@ -978,7 +1661,7 @@ function WorkStory({ isMarketingOpen, isPersonalOpen, onOpenMarketing, onOpenPer
       window.removeEventListener('touchmove', onTouchMove)
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [isMarketingOpen, isPersonalOpen])
+  }, [isGraphicOpen, isMarketingOpen, isPersonalOpen, isVideoOpen])
 
   const activeProject = workProjects[activeIndex] ?? workProjects[0]
   return (
@@ -1014,16 +1697,31 @@ function WorkStory({ isMarketingOpen, isPersonalOpen, onOpenMarketing, onOpenPer
               </div>
               <div className="work-copy">
                 <h2>
-                  {project.number === '01' || project.number === '04' ? (
+                  {project.number === '01' ||
+                  project.number === '02' ||
+                  project.number === '03' ||
+                  project.number === '04' ? (
                     <button
                       className="work-title-link work-title-button"
                       type="button"
                       aria-label={
                         project.number === '01'
                           ? 'Abrir pieza destacada de marketing'
-                          : 'Abrir proyecto personal Koust'
+                          : project.number === '02'
+                            ? 'Abrir galeria de diseno grafico'
+                            : project.number === '03'
+                              ? 'Abrir apartado de edicion de video'
+                              : 'Abrir proyecto personal Koust'
                       }
-                      onClick={project.number === '01' ? onOpenMarketing : onOpenPersonal}
+                      onClick={
+                        project.number === '01'
+                          ? onOpenMarketing
+                          : project.number === '02'
+                            ? onOpenGraphic
+                            : project.number === '03'
+                              ? onOpenVideo
+                              : onOpenPersonal
+                      }
                     >
                       {project.title.map((line) => (
                         <span key={line}>{line}</span>
@@ -1060,7 +1758,9 @@ function WorkStory({ isMarketingOpen, isPersonalOpen, onOpenMarketing, onOpenPer
 
 export default function App() {
   const [arrowProgress, setArrowProgress] = useState(0)
+  const [isGraphicOpen, setIsGraphicOpen] = useState(false)
   const [isMarketingOpen, setIsMarketingOpen] = useState(false)
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
   const [isPersonalOpen, setIsPersonalOpen] = useState(false)
 
   useEffect(() => {
@@ -1069,6 +1769,16 @@ export default function App() {
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const openGraphicFromHash = () => {
+      if (window.location.hash === '#diseno-grafico') setIsGraphicOpen(true)
+    }
+
+    openGraphicFromHash()
+    window.addEventListener('hashchange', openGraphicFromHash)
+    return () => window.removeEventListener('hashchange', openGraphicFromHash)
   }, [])
 
   return (
@@ -1137,12 +1847,18 @@ export default function App() {
 
       <IdeaReveal />
       <WorkStory
+        isGraphicOpen={isGraphicOpen}
         isMarketingOpen={isMarketingOpen}
+        isVideoOpen={isVideoOpen}
         isPersonalOpen={isPersonalOpen}
+        onOpenGraphic={() => setIsGraphicOpen(true)}
         onOpenMarketing={() => setIsMarketingOpen(true)}
+        onOpenVideo={() => setIsVideoOpen(true)}
         onOpenPersonal={() => setIsPersonalOpen(true)}
       />
       <MarketingGallery isOpen={isMarketingOpen} onClose={() => setIsMarketingOpen(false)} />
+      <GraphicDesignGallery isOpen={isGraphicOpen} onClose={() => setIsGraphicOpen(false)} />
+      <VideoEditingShowcase isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
       <PersonalProject isOpen={isPersonalOpen} onClose={() => setIsPersonalOpen(false)} />
     </main>
   )
