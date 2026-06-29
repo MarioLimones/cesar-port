@@ -4,10 +4,13 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 const previewAnimation =
   'https://lottie.host/46b24b39-3cd1-42a4-9a6f-2e97122fc30b/oqyYEQeYOQ.json'
 
+const siteBase = import.meta.env.BASE_URL
+const publicAsset = (path) => `${siteBase}${path.replace(/^\/+/, '')}`
+
 const workProjects = [
   {
     number: '01',
-    href: '/marketing',
+    href: '#marketing',
     title: ['Marketing'],
     subtitle: 'Campanas, contenido y acciones pensadas para que una marca entre en conversacion.',
     background: '#0b0e0f',
@@ -32,7 +35,7 @@ const workProjects = [
   },
   {
     number: '02',
-    href: '/diseno-grafico',
+    href: '#diseno-grafico',
     title: ['Diseño', 'gráfico'],
     subtitle: 'Piezas visuales, composicion y sistemas graficos con una mirada mas editorial.',
     background: '#162b64',
@@ -57,7 +60,7 @@ const workProjects = [
   },
   {
     number: '03',
-    href: '/edicion-video',
+    href: '#edicion-video',
     title: ['Edicion', 'de video'],
     subtitle: 'Ritmo, montaje y narrativa para piezas que se sienten fluidas desde el primer segundo.',
     background: '#101314',
@@ -82,7 +85,7 @@ const workProjects = [
   },
   {
     number: '04',
-    href: '/proyecto-personal',
+    href: '#proyecto-personal',
     title: ['Proyecto', 'personal'],
     subtitle: 'Conceptos, pruebas y direccion propia para convertir una intuicion en algo visible.',
     background: '#351121',
@@ -163,21 +166,21 @@ const koustSections = [
     kicker: 'Identidad',
     title: 'Negro base, amarillo golpe.',
     text: 'Koust puede presentarse con una entrada directa: marca grande, mucho contraste y mensajes cortos para que cada bloque se sienta como una pieza de campana.',
-    image: '/koust/Propuesta-Koust-2.png',
+    image: publicAsset('koust/Propuesta-Koust-2.png'),
     alt: 'Propuesta editorial Just Create de Koust',
   },
   {
     kicker: 'Contenido',
     title: 'Espacio para producto, texto e imagen.',
     text: 'La estructura deja hueco para editoriales, renders, fotos de producto o manifiesto de marca sin romper el ritmo de la ventana.',
-    image: '/koust/3(4).png',
+    image: publicAsset('koust/3(4).png'),
     alt: 'Tres modelos con camisetas negras de Koust',
   },
   {
     kicker: 'Sistema',
     title: 'Secciones con entrada suave.',
     text: 'Cada bloque entra con transicion, contraste alto y composiciones alternas para que el scroll no parezca una pagina estatica.',
-    image: '/koust/Grafiti7.png',
+    image: publicAsset('koust/Grafiti7.png'),
     alt: 'Editorial con camisetas blancas de Koust',
   },
 ]
@@ -219,7 +222,7 @@ const koustGalleryImages = [
 ]
 
 const koustGalleryItems = koustGalleryImages.map((image) => ({
-  src: `/koust/${image}`,
+  src: publicAsset(`koust/${image}`),
   alt: `Imagen editorial Koust ${image}`,
 }))
 
@@ -756,7 +759,7 @@ function PersonalProject({ isOpen, onClose }) {
         <section className="personal-project-hero" aria-label="Video principal de Koust">
           <video
             className="personal-project-video"
-            src="/RTO-finalizado.mp4"
+            src={publicAsset('RTO-finalizado.mp4')}
             autoPlay
             muted
             loop
@@ -1071,7 +1074,7 @@ export default function App() {
   return (
     <main className="home" aria-label="Cesar portfolio home">
       <nav className="top-nav" aria-label="Navegacion principal">
-        <a className="brand" href="/" aria-label="Cesar portfolio">
+        <a className="brand" href={siteBase} aria-label="Cesar portfolio">
           César V.
         </a>
         <div className="section-links">
