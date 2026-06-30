@@ -1,9 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
-
-const previewAnimation =
-  'https://lottie.host/46b24b39-3cd1-42a4-9a6f-2e97122fc30b/oqyYEQeYOQ.json'
-
 const siteBase = import.meta.env.BASE_URL
 const publicAsset = (path) => `${siteBase}${path.replace(/^\/+/, '')}`
 
@@ -64,7 +59,7 @@ const workProjects = [
     title: ['Edicion', 'de video'],
     subtitle: 'Ritmo, montaje y narrativa para piezas que se sienten fluidas desde el primer segundo.',
     background: '#101314',
-    glow: 'rgba(148, 255, 214, 0.16)',
+    glow: 'rgba(255, 237, 0, 0.16)',
     images: [
       {
         className: 'work-asset-md work-asset-left',
@@ -1816,12 +1811,10 @@ export default function App() {
         <div className="frame-wrap">
           <span className="frame-shape" aria-hidden="true" />
           <div className="frame" aria-label="Vista previa del portfolio">
-            <DotLottieReact
+            <img
               className="preview"
-              src={previewAnimation}
-              loop
-              autoplay
-              aria-label="Animacion de muestra"
+              src={publicAsset('César V.webp')}
+              alt="Cesar V"
             />
           </div>
         </div>
